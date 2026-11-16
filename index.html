@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="The Hidden Recruits: a research-driven investigation of money-mule recruitment, young people, and criminal responsibility in Kazakhstan." name="description"/>
+<meta content="#F6F8FC" name="theme-color"/>
+<title>The Hidden Recruits — Kazakhstan · PLS 419</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<style>
+:root { --paper:#F6F8FC;--ink:#182C4B;--teal:#285CC8;--amber:#EC746B;--terracotta:#E66863;--sage:#E6F6F1;--soft:#E6EBF4;--mute:#667791;--white:#FFFFFF;--max:1110px;--reading:760px; }
+*,*::before,*::after { box-sizing:border-box; }
+html{scroll-behavior:smooth;scroll-padding-top:110px;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:absolute;top:0;left:0;right:0;height:630px;z-index:-1;background:radial-gradient(ellipse at 80% 20%,#E7EEFC 0%,transparent 55%);pointer-events:none;}
+button,a,input{-webkit-tap-highlight-color:transparent;}
+a{color:inherit;text-decoration-color:rgba(36,75,74,.35);text-underline-offset:3px;}
+a:hover{color:var(--teal);text-decoration-color:var(--teal);}
+button{font:inherit;cursor:pointer;}
+:focus-visible{outline:3px solid var(--amber);outline-offset:4px;}
+.skip-link{position:absolute;top:-200px;left:12px;padding:10px 16px;background:#fff;z-index:999;}
+.skip-link:focus{top:14px;}
+.page{width:min(calc(100% - 56px),var(--max));margin-inline:auto;}
+.eyebrow,.section-index,.nav-link,.feature-status,.source-outlink,.receipt-top,.receipt-lines,.receipt-footnote,.hero-side-label,.index-pill,.source-number,.mini-footnote{font-family:'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;}
+.eyebrow{font-size:.65rem;line-height:1.55;font-weight:500;letter-spacing:.13em;color:var(--teal);margin:0 0 10px;}
+.top-progress{position:fixed;top:0;left:0;width:0;height:3px;background:var(--amber);z-index:200;transition:width .1s linear;}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(245,243,237,.96);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-bottom:1px solid rgba(32,48,56,.12);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px;}
+.brand{display:flex;gap:10px;align-items:center;text-decoration:none;min-width:max-content;}
+.brand-mark{display:grid;place-items:center;width:36px;height:36px;background:var(--teal);color:white;border-radius:7px;position:relative;}
+.brand-mark::after{content:'';width:9px;height:9px;border:1px solid #C6D5CF;border-radius:50%;position:absolute;top:9px;left:11px;}
+.brand-glyph{font-size:19px;font-weight:600;position:relative;top:4px;}
+.brand-title{font-weight:700;font-size:.8rem;letter-spacing:.02em;line-height:1.25;}
+.brand-sub{display:block;color:var(--mute);font-size:.61rem;font-weight:500;letter-spacing:.09em;margin-top:4px;}
+.desktop-nav{display:flex;gap:4px;align-items:center;overflow:hidden;}
+.nav-link{white-space:nowrap;font-size:.64rem;letter-spacing:.01em;text-decoration:none;border-radius:6px;padding:9px 10px;transition:.2s ease;color:#677D9F;}
+.nav-link:hover,.nav-link.active{background:var(--sage);color:var(--teal);}
+.mobile-nav{display:none;overflow-x:auto;gap:2px;padding:0 0 10px;scrollbar-width:thin;}
+.mobile-nav .nav-link{flex:none;}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:54px;padding:104px 0 82px;border-bottom:1px solid #DCE4F0;align-items:end;}
+.hero-eyebrow{display:flex;align-items:center;gap:13px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--teal);font-size:.69rem;letter-spacing:.12em;}
+.hero-eyebrow::before{content:'';width:34px;height:2px;background:var(--amber);}
+.hero h1{font:650 clamp(4.25rem,9vw,8.3rem)/.94 'Manrope',Georgia,serif;letter-spacing:-.069em;max-width:800px;margin:26px 0 26px;}
+.hero h1 em{display:block;font-weight:500;font-style:italic;color:var(--teal);letter-spacing:-.06em;}
+.hero-description{font-size:clamp(1rem,1.75vw,1.17rem);line-height:1.65;color:#596765;max-width:610px;margin:0 0 25px;}
+.hero-bottom{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:28px;}
+.primary-link{display:inline-flex;align-items:center;gap:13px;background:var(--teal);color:white;border:1px solid var(--teal);padding:13px 17px;font-weight:600;font-size:.82rem;text-decoration:none;border-radius:7px;}
+.primary-link:hover{background:var(--ink);color:white;}
+.minor-link{font-size:.78rem;text-decoration:none;border-bottom:1px solid var(--amber);padding:4px 0;}
+.hero-case{border:1px solid #CBD1CB;border-radius:12px;background:#FFFFFF;overflow:hidden;box-shadow:0 16px 70px rgba(32,48,56,.055);}
+.case-head{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;background:var(--teal);color:#EFF4FF;}
+.case-head span{font-family:'IBM Plex Mono',monospace;font-size:.63rem;letter-spacing:.07em;}
+.case-body{padding:24px 22px;}
+.hero-side-label{font-size:.62rem;color:var(--mute);line-height:1.5;}
+.case-body .big-stat{font:650 3.65rem/1 'Manrope',Georgia,serif;color:var(--teal);letter-spacing:-.05em;margin:12px 0 8px;}
+.case-body .big-stat.older{color:var(--terracotta);}
+.case-desc{color:var(--ink);font-size:.88rem;line-height:1.55;margin:0 0 13px;}
+.case-rule{width:100%;height:5px;background:#EAF0F9;border-radius:99px;overflow:hidden;margin-bottom:20px;}
+.case-rule span{display:block;height:100%;background:var(--teal);}
+.case-rule.older span{background:var(--terracotta);}
+.case-divide{border-top:1px dashed #C2D0E3;margin:19px 0;}
+.case-note{font-size:.71rem;line-height:1.6;color:var(--mute);}
+.story-spine{border-left:1px solid #D9E3F1;margin:0 0 0 12px;padding-left:33px;}
+.research-section{padding:96px 0 70px;border-bottom:1px solid #DCE4F0;position:relative;}
+.research-section::before{position:absolute;top:104px;left:-42px;content:'';width:9px;height:9px;background:var(--amber);border-radius:100%;outline:9px solid var(--paper);}
+.section-kicker{display:flex;gap:15px;align-items:center;margin-bottom:18px;}
+.index-pill{display:grid;place-items:center;min-width:42px;height:28px;background:var(--teal);color:#fff;border-radius:4px;font-size:.66rem;}
+.section-kicker .eyebrow{margin:0;}
+.section-title{font:650 clamp(2.5rem,5.2vw,4.55rem)/1.09 'Manrope',Georgia,serif;letter-spacing:-.052em;max-width:890px;margin:0 0 38px;}
+.article-copy{max-width:var(--reading);}
+.prose-p{font-size:1.035rem;line-height:1.84;letter-spacing:-.005em;margin:0 0 22px;color:#273F62;}
+.prose-p.lead{font-size:1.12rem;color:var(--ink);line-height:1.74;}
+.subsection-title{font:650 clamp(1.45rem,2.5vw,2.07rem)/1.3 'Manrope',Georgia,serif;letter-spacing:-.027em;margin:49px 0 16px;color:var(--ink);scroll-margin-top:110px;}
+.citation{font-size:.75em;white-space:nowrap;color:var(--teal);}
+.citation a{font-family:'IBM Plex Mono',monospace;color:var(--teal);font-weight:500;text-decoration:none;}
+.citation a:hover{text-decoration:underline;}
+.big-callout{position:relative;margin:46px 0 12px;padding:30px 34px;border-radius:9px;max-width:850px;overflow:hidden;}
+.question-card{background:var(--teal);color:#F7FAFF;}
+.gap-card{background:#E6F6F1;border-left:5px solid var(--teal);color:var(--ink);}
+.big-callout-index{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.1em;opacity:.68;}
+.big-callout h3{font:650 2.5rem/1.1 'Manrope',Georgia,serif;letter-spacing:-.035em;margin:14px 0 17px;}
+.big-callout p{font:500 clamp(1rem,1.9vw,1.23rem)/1.69 'Inter',sans-serif;max-width:680px;margin:0;position:relative;z-index:2;}
+.callout-corner{position:absolute;right:24px;top:0;font:650 9rem/1 'Manrope',Georgia,serif;opacity:.08;}
+.source-caption,.feature-footnote{font-size:.77rem;line-height:1.7;color:var(--mute);margin:9px 0 25px;}
+.table-scroll{overflow-x:auto;max-width:100%;scrollbar-width:thin;}
+.data-table{border-collapse:collapse;width:100%;min-width:480px;font-size:.83rem;line-height:1.55;}
+.data-table th{background:#E5ECE7;color:var(--teal);padding:14px 14px;text-align:left;font-weight:700;border-bottom:2px solid var(--teal);}
+.data-table td{padding:12px 14px;border-bottom:1px solid #D9E3F1;color:#263A5C;}
+.data-table tr:nth-child(even) td{background:rgba(232,234,225,.43);}
+.data-table tr:last-child td{border-bottom:1px solid #AEBBB4;}
+.feature{max-width:990px;margin:32px 0 42px;background:#FFFFFF;border:1px solid #DCE4F0;border-radius:13px;padding:28px 29px;box-shadow:0 10px 40px rgba(32,48,56,.035);}
+.feature-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;}
+.feature h4{font:650 clamp(1.55rem,3vw,2.2rem)/1.16 'Manrope',Georgia,serif;letter-spacing:-.035em;margin:0 0 7px;}
+.feature-status{white-space:nowrap;font-size:.6rem;color:var(--mute);padding:7px 9px;border:1px solid #DCE4F0;border-radius:4px;}
+.feature-help{font-size:.86rem;line-height:1.6;color:var(--mute);margin:9px 0 23px;max-width:690px;}
+.chart-feature{padding:30px 28px;}
+.chart-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px;}
+.chart-description{font-size:.77rem;color:var(--mute);margin:3px 0 0;}
+.chart-switch{display:flex;gap:3px;background:#EAF0FB;padding:4px;border-radius:8px;white-space:nowrap;}
+.switch-btn{font-size:.74rem;padding:8px 13px;border:0;background:transparent;border-radius:6px;color:#627491;font-weight:600;}
+.switch-btn.is-active{color:white;background:var(--teal);}
+.chart-canvas-wrap{height:320px;max-width:100%;position:relative;}
+.chart-canvas-wrap canvas{width:100% !important;height:100% !important;}
+.chart-table-panel[hidden],.chart-canvas-wrap[hidden]{display:none!important;}
+.chart-feature .chart-table-panel{padding-top:8px;}
+.silences-heading{margin-top:56px;}
+.silence-item{position:relative;border-left:3px solid var(--amber);background:rgba(253,252,247,.66);padding:17px 19px 17px 23px;font-size:1.0rem;line-height:1.72;margin:12px 0;color:#273F62;}
+.telegram-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:20px;align-items:stretch;}
+.telegram-shell{background:#E7EEF9;border-radius:11px;overflow:hidden;border:1px solid #D8DFDA;}
+.telegram-top{display:flex;align-items:center;gap:11px;padding:14px 15px;background:white;border-bottom:1px solid #D5E4F5;}
+.telegram-avatar{display:grid;place-items:center;background:#D7E6F9;border-radius:50%;color:var(--teal);font-size:.68rem;font-weight:700;width:36px;height:36px;}
+.telegram-top strong{display:block;font-size:.83rem;}
+.telegram-top small{display:block;font-size:.64rem;color:var(--mute);margin-top:3px;}
+.telegram-menu{margin-left:auto;color:var(--mute);}
+.telegram-thread{padding:24px 16px 29px;}
+.telegram-bubble{padding:17px 16px;background:white;border-radius:10px 10px 10px 3px;box-shadow:0 3px 16px rgba(0,0,0,.05);max-width:390px;}
+.telegram-metadata{font-size:.63rem;color:var(--mute);}
+.telegram-bubble p{margin:11px 0;font-size:.87rem;line-height:1.73;}
+.telegram-time{display:block;text-align:right;font-size:.62rem;color:var(--mute);}
+.telegram-caption{padding:0 16px 16px;font-size:.68rem;color:#627491;}
+.phrase{display:inline;background:rgba(189,138,75,.16);color:#9B3B38;border:0;border-bottom:2px dashed var(--amber);padding:1px 2px;line-height:inherit;font-weight:700;text-align:left;transition:background .18s;}
+.phrase:hover,.phrase.is-selected{background:#FFE3DB;color:#842B2B;}
+.inspector-panel{padding:25px 24px;background:var(--teal);color:white;border-radius:10px;min-height:320px;display:flex;flex-direction:column;}
+.inspector-panel .eyebrow{color:#D2E2FF;font-size:.6rem;}
+.inspector-icon{display:grid;place-items:center;margin:23px 0 15px;width:38px;height:38px;border:1px solid #8FADEC;border-radius:50%;font-family:'Manrope',serif;font-size:1.25rem;}
+.inspector-panel h5{font:650 1.45rem/1.2 'Manrope',Georgia,serif;margin:0 0 14px;}
+.inspector-panel > p:not(.eyebrow){font-size:.82rem;line-height:1.7;color:#E7EDFC;margin:0 0 15px;}
+.inspector-notice{border-top:1px solid #5C817B;padding-top:15px;font-size:.74rem;line-height:1.65;color:#DCE8FF;margin-top:auto;}
+.inspector-count{font-size:.61rem;color:#DDE8FF;font-family:'IBM Plex Mono',monospace;margin-top:16px;}
+.receipt-block{border:2px dashed #A8BFE5;background:#FFFFFF;position:relative;}
+.receipt-block::before,.receipt-block::after{content:'';position:absolute;top:49%;width:16px;height:28px;background:var(--paper);border-radius:50%;}
+.receipt-block::before{left:-10px;}
+.receipt-block::after{right:-10px;}
+.receipt-top{display:flex;justify-content:space-between;gap:9px;font-size:.62rem;color:var(--mute);}
+.receipt-heading{display:flex;justify-content:space-between;gap:18px;align-items:center;margin:28px 0 23px;}
+.receipt-heading h4{max-width:390px;}
+.receipt-total{text-align:right;white-space:nowrap;}
+.receipt-total span{display:block;color:var(--mute);font-family:'IBM Plex Mono',monospace;font-size:.62rem;}
+.receipt-total strong{display:block;font:650 2.6rem 'Manrope',Georgia,serif;letter-spacing:-.05em;color:var(--teal);}
+.receipt-divider{border-top:1px dashed #C2D0E3;margin:18px 0;}
+.receipt-lines{display:grid;gap:15px;}
+.receipt-lines > div{display:flex;justify-content:space-between;gap:20px;font-size:.7rem;}
+.receipt-lines span:first-child{font-weight:500;color:var(--ink);}
+.receipt-lines span:last-child{text-align:right;font-family:'Inter',sans-serif;text-transform:none;font-size:.8rem;color:var(--mute);letter-spacing:0;}
+.receipt-total-row{display:grid;grid-template-columns:1fr auto 1fr auto;gap:13px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:.67rem;}
+.receipt-total-row strong{color:var(--teal);font-size:.85rem;}
+.receipt-footnote{font-size:.62rem;color:var(--mute);line-height:1.5;margin:19px 0 0;text-transform:none;letter-spacing:0;}
+.budget-table-wrap,.scenario-table-wrap{margin:17px 0 10px;}
+.budget-table-wrap .data-table tr:last-child td{font-weight:700;background:var(--sage);color:var(--teal);}
+.slider-feature{margin-top:27px;}
+.slider-layout{display:flex;flex-direction:column;max-width:680px;}
+.slider-layout label{display:flex;justify-content:space-between;font-size:.79rem;font-weight:700;margin-bottom:15px;}
+.slider-layout output{font-family:'IBM Plex Mono',monospace;color:var(--teal);font-size:1.15rem;}
+input[type=range]{width:100%;accent-color:var(--teal);height:17px;cursor:pointer;}
+.range-ends{display:flex;justify-content:space-between;font-size:.65rem;color:var(--mute);font-family:'IBM Plex Mono',monospace;}
+.slider-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 15px;}
+.slider-metrics div{padding:17px 15px;background:var(--sage);border-radius:7px;}
+.slider-metrics span{font:500 .62rem 'IBM Plex Mono',monospace;display:block;color:var(--teal);min-height:30px;}
+.slider-metrics strong{font:650 2rem/1.2 'Manrope',Georgia,serif;color:var(--ink);display:block;margin-top:7px;}
+.feature-footnote{margin:0;}
+.verdict-heading{padding-top:20px;color:var(--teal);}
+.verdict-heading::before{content:'POLICY VERDICT';display:block;font:500 .65rem 'IBM Plex Mono',monospace;letter-spacing:.12em;color:var(--amber);margin-bottom:10px;}
+.transparency-section,.sources-section{padding:85px 0 40px;}
+.transparency-section{border-bottom:1px solid #DCE4F0;}
+.transparency-box{background:#F0F7FD;border:1px solid #CDECE0;border-radius:10px;padding:29px 32px;max-width:870px;}
+.transparency-box .prose-p{font-size:.9rem;line-height:1.8;}
+.transparency-box .prose-p:last-child{margin-bottom:0;}
+.sources-list{list-style:none;padding:0;margin:30px 0 55px;max-width:930px;}
+.source-entry{display:grid;grid-template-columns:54px 1fr;gap:14px;border-top:1px solid #D9DDD5;padding:14px 2px;scroll-margin-top:125px;}
+.source-number{font-size:.68rem;color:var(--teal);padding-top:4px;}
+.source-copy{font-size:.81rem;line-height:1.65;}
+.source-copy>a:first-child{text-decoration:none;}
+.source-copy>a:first-child:hover{text-decoration:underline;}
+.source-outlink{display:inline-block;margin-left:9px;font-size:.6rem;color:var(--teal);text-decoration:none;white-space:nowrap;}
+.source-entry:target{background:var(--sage);border-radius:4px;}
+.audit-line{font-family:'IBM Plex Mono',monospace;color:var(--mute);font-size:.7rem;margin:8px 0 15px;}
+footer{border-top:1px solid #DCE4F0;padding:26px 0 42px;font-size:.75rem;color:var(--mute);}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;}
+.footer-inner a{text-decoration:none;color:var(--teal);}
+@media(max-width:1050px){.desktop-nav{display:none;}.mobile-nav{display:flex;}.header-inner{min-height:62px;}.hero{grid-template-columns:1.25fr .75fr;gap:25px;padding-top:74px;}.hero h1{font-size:clamp(3.8rem,8vw,6rem);}}
+@media(max-width:780px){.page{width:min(calc(100% - 36px),var(--max));}.hero{grid-template-columns:1fr;padding:65px 0 56px;gap:28px;}.hero h1{font-size:clamp(3.7rem,13vw,6.3rem);}.hero-case{max-width:610px;}.hero-case .case-body{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}.case-body .case-divide{display:none;}.case-body .case-rule{margin-bottom:8px;}.case-body .case-note{grid-column:1/-1;margin-top:13px;}.research-section{padding:72px 0 50px;}.story-spine{margin-left:4px;padding-left:22px;}.research-section::before{left:-30px;top:80px;}.telegram-grid{grid-template-columns:1fr;}.inspector-panel{min-height:240px;}.feature{padding:22px 18px;}.big-callout{padding:24px 22px;}.big-callout h3{font-size:2.1rem;}.chart-canvas-wrap{height:270px;}}
+@media(max-width:540px){.page{width:min(calc(100% - 28px),var(--max));}.brand-title{font-size:.74rem;}.brand-sub{font-size:.57rem;}.hero h1{font-size:clamp(3.4rem,14vw,4.5rem);}.hero-case .case-body{display:block;}.case-body .case-divide{display:block;}.hero-bottom{align-items:flex-start;}.story-spine{border-left:none;margin:0;padding:0;}.research-section::before{display:none;}.section-title{font-size:clamp(2.25rem,10vw,3rem);}.prose-p{font-size:.98rem;line-height:1.8;}.subsection-title{font-size:1.62rem;}.chart-head{flex-direction:column;align-items:flex-start;gap:12px;}.chart-canvas-wrap{height:280px;}.feature-top{flex-direction:column;}.feature-status{align-self:flex-start;}.slider-metrics{grid-template-columns:1fr;}.slider-metrics span{min-height:0;}.slider-metrics strong{font-size:1.9rem;}.receipt-heading{flex-direction:column;align-items:flex-start;}.receipt-total{text-align:left;}.receipt-lines >div{display:block;}.receipt-lines span:last-child{display:block;text-align:left;margin-top:4px;}.receipt-total-row{grid-template-columns:1fr auto;}.footer-inner{display:block;}.source-entry{grid-template-columns:36px 1fr;gap:8px;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
+  
+/* ===== THE HIDDEN RECRUITS · BANKING-APP EDITORIAL REVISION ===== */
+:root{
+  --paper:#F6F8FC;--ink:#182C4B;--teal:#285CC8;--cobalt:#285CC8;
+  --deep-blue:#173C80;--navy:#182C4B;--coral:#E66863;--emerald:#087D68;
+  --amber:#EC746B;--terracotta:#E66863;--sage:#E6F6F1;
+  --soft:#E6EBF4;--mute:#667791;--white:#FFFFFF;
+  --max:1120px;--reading:790px;--body-size:1rem;
+}
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--paper);color:var(--ink);font-size:var(--body-size);
+}
+body::before{background:radial-gradient(ellipse at 75% 12%,#E8EFFD 0%,transparent 66%);}
+a{ text-decoration-color:#8CA8E6; }
+a:hover{color:var(--deep-blue);text-decoration-color:var(--deep-blue);}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;}
+.site-header{background:rgba(250,252,255,.96);border-bottom:1px solid #DAE3F2;box-shadow:0 6px 28px rgba(17,42,88,.025);}
+.top-progress{background:var(--cobalt);}
+.brand-mark{border-radius:12px;background:var(--deep-blue);}
+.nav-link{font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0;text-transform:none;color:#506686;}
+.nav-link.active,.nav-link:hover{background:#E7EEFC;color:var(--deep-blue);}
+.eyebrow,.section-index,.feature-status,.source-outlink,.receipt-top,.receipt-lines,.receipt-footnote,.hero-side-label,.index-pill,.source-number,.mini-footnote{font-family:'IBM Plex Mono',monospace;}
+.page{width:min(calc(100% - 64px),var(--max));margin-inline:auto;}
+.hero{max-width:1060px;margin-inline:auto;gap:60px;align-items:center;padding:92px 0 78px;}
+.hero h1{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.03;letter-spacing:-.065em;font-size:clamp(3.4rem,7.5vw,6.6rem);}
+.hero h1 em{font-family:'Manrope',sans-serif;font-style:normal;letter-spacing:-.061em;color:var(--cobalt);}
+.hero-description{font-size:1.03rem;line-height:1.78;color:#4B6080;}
+.hero-case{border-radius:18px;border-color:#DCE4F1;box-shadow:0 18px 70px rgba(15,40,80,.06);background:white;}
+.case-head{background:#183D83;}
+.case-body .big-stat{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.06em;color:var(--deep-blue);}
+.case-body .big-stat.older{color:var(--coral);}
+.case-rule span{background:var(--deep-blue);}
+.case-rule.older span{background:var(--coral);}
+.primary-link{background:var(--deep-blue);border-color:var(--deep-blue);border-radius:10px;}
+.primary-link:hover{background:#102D63;border-color:#102D63;}
+/* Research is a centered reading column, not a narrow left rail. Paragraphs remain left-aligned for accessibility. */
+.story-spine{border-left:0!important;margin:0!important;padding:0!important;max-width:100%;}
+.research-section{max-width:1060px;margin-inline:auto;padding:79px 0 68px;}
+.research-section::before{display:none!important;}
+.article-copy,.section-kicker{width:100%;max-width:var(--reading);margin-left:auto!important;margin-right:auto!important;}
+.article-copy > .doc-block,.article-copy > .feature,.article-copy > .big-callout{margin-left:auto;margin-right:auto;}
+.section-title{font:800 clamp(2.05rem,3.9vw,3.05rem)/1.17 'Manrope',sans-serif;letter-spacing:-.048em;max-width:100%;margin:0 0 27px;color:var(--navy);}
+.subsection-title{font:750 clamp(1.34rem,2.4vw,1.72rem)/1.32 'Manrope',sans-serif;letter-spacing:-.028em;margin:42px 0 17px;color:#1C3A68;}
+.index-pill{background:var(--deep-blue);border-radius:8px;}
+.prose-p,.prose-p.lead,.silence-item,.transparency-box .prose-p{
+  font-family:'Inter',sans-serif!important;font-size:var(--body-size)!important;
+  line-height:1.85!important;letter-spacing:0!important;color:var(--ink);
+  text-align:left;font-weight:400;
+}
+.prose-p,.prose-p.lead{margin:0 0 22px;}
+.silence-item{padding:18px 22px;border-left-color:var(--coral);background:#FFF7F6;border-radius:0 10px 10px 0;margin:12px 0;}
+.big-callout{max-width:100%;border-radius:16px;margin:37px auto;box-shadow:none;}
+.big-callout h3{font:800 clamp(1.5rem,2.7vw,2.03rem)/1.23 'Manrope',sans-serif;letter-spacing:-.035em;}
+.big-callout p{font:500 1rem/1.84 'Inter',sans-serif;}
+.question-card{background:#193F86;color:#FFFFFF;}
+.gap-card{background:#EBF1FE;border-left:5px solid #285CC8;}
+.gap-card p,.gap-card h3{color:#18355D;}
+.feature{background:#FFFFFF;border:1px solid #DCE5F3;border-radius:17px;
+  margin:32px auto 42px!important;box-shadow:0 15px 45px rgba(25,54,101,.035);max-width:100%;}
+.feature h4{font:800 clamp(1.3rem,2.4vw,1.75rem)/1.25 'Manrope',sans-serif;letter-spacing:-.03em;}
+.feature-help,.feature-footnote{color:#506582;}
+.chart-switch{background:#EDF2FC;}
+.switch-btn.is-active{background:var(--deep-blue);}
+.data-table th{background:#E9EFFB;border-bottom-color:#2B5FCC;color:#183F83;}
+.data-table td{color:#273D61;border-bottom-color:#DFE7F3;}
+.data-table tr:nth-child(even) td{background:#F7F9FD;}
+.telegram-shell{background:#EDF3FC;border:1px solid #DCE6F5;border-radius:14px;}
+.telegram-top{border-bottom-color:#DCE6F5;}
+.telegram-avatar{background:#DAE7FB;color:#214C9E;}
+.telegram-bubble{border:1px solid #E3EAF4;border-radius:12px 12px 12px 4px;}
+.phrase{background:#FFE5E1;color:#A7433C;border-bottom:2px dashed var(--coral);border-radius:3px;}
+.phrase:hover,.phrase.is-selected{background:#FFD0CB;color:#822F2B;}
+.inspector-panel{background:#173B7A;border-radius:14px;}
+.inspector-panel .eyebrow{color:#D4E1FF;}
+.inspector-panel h5{font:800 1.38rem/1.33 'Manrope',sans-serif;}
+.inspector-icon{border-color:#6C98EA;background:#254C92;}
+.inspector-notice{border-top:1px solid rgba(197,222,255,.35);color:#DCEAFF;}
+.inspector-notice::before{content:'SAFE NEXT STEPS · ';color:#83DEC7;font-weight:700;}
+.receipt-block{background:#FFFFFF;border:2px dashed #8EA8D5;border-radius:17px;}
+.receipt-block::before,.receipt-block::after{background:var(--paper);}
+.receipt-total strong{font:800 2.4rem 'Manrope',sans-serif;color:var(--deep-blue);}
+.receipt-lines{font-family:'IBM Plex Mono',monospace;}
+.budget-table-wrap .data-table tr:last-child td{background:#EAF1FD;color:var(--deep-blue);}
+.slider-layout output{color:var(--deep-blue);}
+input[type=range]{accent-color:var(--cobalt);}
+.slider-metrics div{background:#EEF3FC;}
+.slider-metrics span{color:var(--deep-blue);}
+.slider-metrics strong{font:800 clamp(1.5rem,2vw,1.9rem)/1.2 'Manrope',sans-serif;color:var(--navy);}
+.verdict-heading{color:var(--emerald)!important;}
+.verdict-heading::before{color:var(--emerald)!important;}
+.verdict-heading + .prose-p{border-left:4px solid var(--emerald);padding:13px 18px;background:#EFFAF5;border-radius:0 9px 9px 0;}
+.transparency-section,.sources-section{max-width:1060px;}
+.transparency-section > .section-title,.sources-section > .section-title,
+.transparency-section > .eyebrow,.sources-section > .eyebrow,
+.transparency-section > p,.sources-section > p{max-width:var(--reading);margin-left:auto;margin-right:auto;}
+.transparency-box{background:#F0F5FE;border-color:#DCE6FA;max-width:var(--reading);margin-inline:auto;}
+.sources-list{max-width:var(--reading);margin:26px auto 55px;}
+.source-entry{grid-template-columns:42px minmax(0,1fr);gap:12px;border-top:1px solid #DFE7F4;}
+.source-copy{font:400 .88rem/1.72 'Inter',sans-serif;color:#283F64;overflow-wrap:anywhere;padding-left:1.2em;text-indent:-1.2em;}
+.source-number{color:var(--cobalt);font-size:.71rem;}
+.reference-title{color:var(--navy);text-decoration:none;font-weight:500;}
+.reference-title:hover{color:var(--cobalt);text-decoration:underline;}
+.reference-url{color:#255AC2;display:inline-block;max-width:100%;overflow-wrap:anywhere;text-decoration:underline;text-decoration-color:#ABC1EA;}
+.apa-citation{font-size:.94em;color:#2154B4;white-space:normal;}
+.apa-citation a{color:#2457B8;font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:#9BB7E8;text-underline-offset:3px;}
+.apa-citation a:hover{color:#163E8E;text-decoration-color:#163E8E;}
+footer{border-color:#DFE7F3;}
+@media (max-width:1050px){.hero h1{font-size:clamp(3.4rem,8vw,5.7rem);}}
+@media (max-width:780px){.page{width:min(calc(100% - 34px),var(--max));}
+ .hero{grid-template-columns:1fr;gap:32px;padding:61px 0 54px;}
+ .research-section{padding:61px 0 51px;}
+ .hero h1{font-size:clamp(3.2rem,10vw,5rem);}
+ .section-title{font-size:clamp(1.9rem,6vw,2.5rem);}
+ .story-spine{margin:0!important;padding:0!important;}
+ .big-callout{padding:26px 23px;}
+ .chart-canvas-wrap{height:270px;}}
+@media (max-width:540px){.page{width:min(calc(100% - 30px),var(--max));}
+ .section-title{font-size:clamp(1.8rem,7.8vw,2.22rem);}
+ .subsection-title{font-size:1.35rem;}
+ .prose-p,.prose-p.lead,.silence-item,.transparency-box .prose-p{font-size:1rem!important;line-height:1.78!important;}
+ .feature{padding:20px 16px;}
+ .receipt-heading{display:block;}.receipt-total{text-align:left;margin-top:18px;}
+ .receipt-total strong{font-size:2.1rem;}
+ .source-entry{grid-template-columns:32px minmax(0,1fr);gap:8px;}
+ .source-copy{font-size:.83rem;}
+ .hero h1{font-size:clamp(2.9rem,12vw,4rem);}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;}}
+
+.apa-narrative{color:#2154B4;font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:#9BB7E8;text-underline-offset:3px;}
+.apa-narrative:hover{color:#163E8E;text-decoration-color:#163E8E;}
+
+/* APA 7 bibliography: prevent long URLs/DOIs from colliding with entry text.
+   Preserve the hanging indent for the citation, while placing the live link
+   on its own wrapping line in every viewport. */
+.source-entry { min-width: 0; }
+.source-copy {
+  min-width: 0;
+  padding-left: 1.25em;
+  text-indent: -1.25em;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.source-copy em { font-style: italic; }
+.source-copy > .reference-url {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: .32rem;
+  margin-bottom: .15rem;
+  text-indent: 0;
+  font-size: .82rem;
+  line-height: 1.7;
+  letter-spacing: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+@media (max-width: 540px) {
+  .source-copy { padding-left: 1em; text-indent: -1em; }
+  .source-copy > .reference-url { font-size: .76rem; line-height: 1.62; }
+}
+
+/* Editorial refinement: simple circular section markers, no redundant taxonomy labels. */
+.research-section .section-title::before,
+.transparency-section > .section-title::before,
+.sources-section > .section-title::before {
+  content: ""; display: inline-block; width: 11px; height: 11px; flex: 0 0 11px;
+  margin-right: 14px; border-radius: 50%; background: var(--cobalt);
+  vertical-align: middle; transform: translateY(-3px);
+  box-shadow: 0 0 0 4px rgba(40,92,200,.085);
+}
+#problem .section-title::before { background: var(--coral); box-shadow: 0 0 0 4px rgba(230,104,99,.09); }
+#solution .section-title::before, #transparency > .section-title::before {
+  background: var(--emerald); box-shadow: 0 0 0 4px rgba(8,125,104,.09);
+}
+@media (max-width:540px) {
+  .research-section .section-title::before, .transparency-section > .section-title::before, .sources-section > .section-title::before {
+    width: 9px; height: 9px; margin-right: 10px; transform:translateY(-2px);
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#problem">Skip to research</a>
+<div aria-hidden="true" class="top-progress" id="progress"></div>
+<header class="site-header">
+<div class="page header-inner"><a aria-label="Return to top" class="brand" href="#top"><span class="brand-mark"><span class="brand-glyph">·</span></span><span><span class="brand-title">THE HIDDEN RECRUITS</span><span class="brand-sub">PLS 419 · KAZAKHSTAN</span></span></a>
+<nav aria-label="Primary navigation" class="desktop-nav">
+<a class="nav-link" href="#problem">01 Problem</a><a class="nav-link" href="#data">02 Data</a><a class="nav-link" href="#research">03 Research</a><a class="nav-link" href="#solution">04 Solution</a><a class="nav-link" href="#verdict">Verdict</a><a class="nav-link" href="#transparency">Transparency</a><a class="nav-link" href="#sources">Sources</a>
+</nav>
+</div>
+<nav aria-label="Mobile section navigation" class="page mobile-nav"><a class="nav-link" href="#problem">01 Problem</a><a class="nav-link" href="#data">02 Data</a><a class="nav-link" href="#research">03 Research</a><a class="nav-link" href="#solution">04 Solution</a><a class="nav-link" href="#verdict">Verdict</a><a class="nav-link" href="#transparency">Transparency</a><a class="nav-link" href="#sources">Sources</a></nav>
+</header>
+<main id="top">
+<div class="page"><section aria-labelledby="main-title" class="hero">
+<div><h1 id="main-title">The Hidden <em>Recruits</em></h1><p class="hero-description">How young Kazakhstanis enter money-mule networks—and what prevention should cost</p><p class="hero-description" style="font-size:.89rem;max-width:520px">An investigation into the people who move money, the people who lose it, and what Kazakhstan's institutions can—and cannot—explain.</p><div class="hero-bottom"><a class="primary-link" href="#problem">Enter the case file <span aria-hidden="true">↘</span></a><a class="minor-link" href="#data">Explore the evidence</a></div></div>
+<aside aria-label="Two populations in the enforcement statistics" class="hero-case"><div class="case-head"><span>CASE FILE 232–1</span><span>JAN—JUN 2026</span></div><div class="case-body"><span class="hero-side-label">SUSPECTS AGED 18–29</span><div class="big-stat">74.3%</div><p class="case-desc">159 of 214 recorded suspects</p><div class="case-rule"><span style="width:74.3%"></span></div><div class="case-divide"></div><span class="hero-side-label">RECOGNIZED VICTIMS OVER 30</span><div class="big-stat older">75.9%</div><p class="case-desc">350 of 461 recognized victims</p><div class="case-rule older"><span style="width:75.9%"></span></div><p class="case-note">Different populations, not matched pairs. Exact shares calculated from DATA HUB counts (reported as 75% and 76%). CPS&amp;SA figures <span class="apa-citation" data-source-ids="5">(<a href="https://t.me/DataHub_FCBK/3772" rel="noopener noreferrer" target="_blank" title="Open DATA HUB source">DATA HUB, 2026</a>)</span>.</p></div></aside>
+</section></div>
+<div class="page"><div class="story-spine">
+<section class="research-section" data-nav-section="" id="problem"><div class="article-copy"><h2 class="section-title doc-block" data-doc-index="5">1. The Problem — When the Recruit Becomes the Criminal</h2>
+<p class="prose-p lead doc-block" data-doc-index="6">On 30 July 2025, Kazakhstan’s National Bank warned that young people, including teenagers, and pensioners were being drawn into money-mule schemes through social networks and messaging platforms. Recruiters promised easy income for access to payment cards or accounts that would later move suspected criminal proceeds. Crucially, the warning distinguished knowing participation from recruitment without full awareness of the scheme <span class="apa-citation" data-source-ids="3">(<a href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/17792" rel="noopener noreferrer" target="_blank" title="Open original source 3: National Bank of Kazakhstan">National Bank of Kazakhstan, 2025a</a>)</span>. The distinction matters: the person whose name appears on a bank account may not be the person who designed, controlled, or profited most from the fraud.</p>
+<p class="prose-p doc-block" data-doc-index="7">Money mules, often called “droppers” in Kazakhstan, provide accounts or transfer funds on another person’s instructions. Some knowingly sell access for payment. Others may believe a message about remote work or a favor from an acquaintance is legitimate. Trust, economic pressure, and unequal information can coexist with responsibility; none automatically establishes innocence. The political question is how institutions identify different roles within a criminal network rather than treating visible transfers as a complete explanation.</p>
+<h3 class="subsection-title doc-block" data-doc-index="8">A new legal boundary</h3>
+<p class="prose-p doc-block" data-doc-index="9">On 16 September 2025, Article 232-1 of Kazakhstan’s Criminal Code came into force, targeting specified unlawful provision, transfer, or acquisition of access to accounts and payment instruments, alongside unlawful transfers <span class="apa-citation" data-source-ids="1,2">(<a href="https://adilet.zan.kz/rus/docs/K1400000226" rel="noopener noreferrer" target="_blank" title="Open original source 1: Republic of Kazakhstan">Republic of Kazakhstan, 2014</a>; <a href="https://www.gov.kz/org/qriim/press/news/details/1068462?lang=ru" rel="noopener noreferrer" target="_blank" title="Open original source 2: Ministry of Internal Affairs of the Republic of Kazakhstan">Ministry of Internal Affairs of the Republic of Kazakhstan, 2025</a>)</span>. Its penalties depend on the conduct and aggravating circumstances: some account-access offences carry fines or arrest, aggravated transfer activity may carry imprisonment, and unlawful acquisition of access for illicit transactions under Part 7 carries three to seven years of restriction or deprivation of liberty <span class="apa-citation" data-source-ids="1">(<a href="https://adilet.zan.kz/rus/docs/K1400000226" rel="noopener noreferrer" target="_blank" title="Open original source 1: Republic of Kazakhstan">Republic of Kazakhstan, 2014</a>)</span>. The law also allows an exemption for a first offender who voluntarily reports and actively assists, provided no other offence is constituted <span class="apa-citation" data-source-ids="1">(<a href="https://adilet.zan.kz/rus/docs/K1400000226" rel="noopener noreferrer" target="_blank" title="Open original source 1: Republic of Kazakhstan">Republic of Kazakhstan, 2014</a>)</span>. This safeguard exists on paper; its actual accessibility remains an empirical question.</p>
+<p class="prose-p doc-block" data-doc-index="10">Enforcement became visible quickly. The Prosecutor General’s Office reported more than 700 cases registered since the new article took effect and, by 29 June 2026, 216 people held criminally accountable, including 202 convicted <span class="apa-citation" data-source-ids="4">(<a href="https://www.gov.kz/org/prokuror/press/news/details/1249581?lang=ru" rel="noopener noreferrer" target="_blank" title="Open original source 4: Prosecutor General’s Office of the Republic of Kazakhstan">Prosecutor General’s Office of the Republic of Kazakhstan, 2026</a>)</span>. In West Kazakhstan Region, seven 19-year-old college students received three years’ restriction of liberty after opening accounts and giving fraudsters access; more than KZT 4 million of stolen funds passed through those accounts <span class="apa-citation" data-source-ids="4">(<a href="https://www.gov.kz/org/prokuror/press/news/details/1249581?lang=ru" rel="noopener noreferrer" target="_blank" title="Open original source 4: Prosecutor General’s Office of the Republic of Kazakhstan">Prosecutor General’s Office of the Republic of Kazakhstan, 2026</a>)</span>. The official account does not establish whether they were deceived, pressured, or fully aware. Their age alone cannot answer that question.</p>
+<p class="prose-p doc-block" data-doc-index="11">The tension is not between protecting fraud victims and protecting offenders. Both matter. Banks and police need to interrupt the flow of stolen money; organizers may rely on identifiable intermediaries who are easier to investigate than remote recruiters. A legal response that counts account holders but cannot explain recruitment risks confusing visibility with control. Equally, assuming all young suspects were exploited would erase agency and harm to victims. The problem is how criminal responsibility is distributed when information, financial bargaining power, and control are uneven. Such distinctions need evidence rather than assumptions about youth.</p>
+<aside aria-label="The social-science question" class="big-callout question-card"><span class="big-callout-index">01 / THE QUESTION</span><h3 class="doc-block" data-cell="0-0" data-doc-index="12">THE SOCIAL-SCIENCE QUESTION</h3><p class="doc-block" data-cell="1-0" data-doc-index="12">How does Kazakhstan’s criminal justice system distribute responsibility between fraud organizers and young people recruited to move money, and how do economic vulnerability, deception, and enforcement practices shape who faces prosecution?</p><span aria-hidden="true" class="callout-corner">?</span></aside></div></section>
+<section class="research-section" data-nav-section="" id="data"><div class="article-copy"><h2 class="section-title doc-block" data-doc-index="15">2. Background &amp; Data — What the Numbers Cannot Explain</h2>
+<p class="prose-p lead doc-block" data-doc-index="16">Kazakhstan now records money-mule offences under a distinct criminal-law provision, but administrative counts primarily describe detection and enforcement, not recruitment prevalence. The Committee on Legal Statistics and Special Accounts (CPS&amp;SA) manages criminal records through Qamqor; the Prosecutor General’s Office and Ministry of Internal Affairs publish case summaries <span class="apa-citation" data-source-ids="4,8">(<a href="https://www.gov.kz/org/prokuror/press/news/details/1249581?lang=ru" rel="noopener noreferrer" target="_blank" title="Open original source 4: Prosecutor General’s Office of the Republic of Kazakhstan">Prosecutor General’s Office of the Republic of Kazakhstan, 2026</a>; <a href="https://qamqor.gov.kz/crimestat/statistics" rel="noopener noreferrer" target="_blank" title="Open original source 8: Committee on Legal Statistics and Special Accounts">Committee on Legal Statistics and Special Accounts, n.d.</a>)</span>. The National Bank’s Anti-Fraud Centre tracks suspicious financial incidents, while the Bureau of National Statistics of the Republic of Kazakhstan measures employment and other social conditions <span class="apa-citation" data-source-ids="7,9">(<a href="https://stat.gov.kz/ru/news/dsituatsiya-na-rynke-truda/" rel="noopener noreferrer" target="_blank" title="Open original source 7: Bureau of National Statistics of the Republic of Kazakhstan">Bureau of National Statistics of the Republic of Kazakhstan, 2026</a>; <a href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/18571" rel="noopener noreferrer" target="_blank" title="Open original source 9: National Bank of Kazakhstan">National Bank of Kazakhstan, 2026</a>)</span>. These datasets have different units and cannot be merged into a single count of “money mules.” Administrative visibility should not be mistaken for the underlying population of people recruited, approached, or harmed.</p>
+<p class="prose-p doc-block" data-doc-index="17">Internationally, INTERPOL and Europol document recruitment through job offers, social media, relationships, and impersonation <span class="apa-citation" data-source-ids="10,11">(<a href="https://www.interpol.int/en/Crimes/Financial-crime/Money-mules-what-are-the-risks" rel="noopener noreferrer" target="_blank" title="Open original source 10: INTERPOL">INTERPOL, n.d.</a>; <a href="https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/money-muling" rel="noopener noreferrer" target="_blank" title="Open original source 11: Europol">Europol, n.d.</a>)</span>. Their typologies help identify mechanisms, not Kazakhstan’s national prevalence. No reviewed open dataset links an individual’s recruitment message, account activity, knowledge, judicial outcome, and access to the statutory exemption.</p>
+<h3 class="subsection-title doc-block" data-doc-index="18">Figure 1. Registered Article 232-1 offences: cumulative timeline</h3>
+<div class="feature chart-feature" id="figure-1">
+<div class="chart-head"><div><p class="eyebrow">INTERACTIVE FIGURE · 01</p><h4>Cumulative registrations</h4><p class="chart-description">Five reporting checkpoints. September 2026 is an approximation.</p></div>
+<div aria-label="Figure 1 display mode" class="chart-switch" role="group"><button aria-pressed="true" class="switch-btn is-active" data-figure="1" data-view="chart" type="button">Chart</button><button aria-pressed="false" class="switch-btn" data-figure="1" data-view="table" type="button">Table</button></div></div>
+<div aria-label="Cumulative registrations; use Table toggle to inspect the exact data" class="chart-canvas-wrap" id="figure-1-chart" role="img"><canvas aria-label="Cumulative registrations" id="chart-timeline"></canvas></div>
+<div class="chart-table-panel" hidden="" id="figure-1-table"><div class="table-scroll"><table class="data-table" data-original-index="19"><thead><tr><th class="doc-block cell" data-cell="0-0" data-doc-index="19" scope="col">Reporting point</th><th class="doc-block cell" data-cell="0-1" data-doc-index="19" scope="col">Registered in stated interval</th><th class="doc-block cell" data-cell="0-2" data-doc-index="19" scope="col">Cumulative since 16 Sep 2025</th></tr></thead><tbody><tr><td class="doc-block cell" data-cell="1-0" data-doc-index="19">Sep 2025</td><td class="doc-block cell" data-cell="1-1" data-doc-index="19">4 (through September)</td><td class="doc-block cell" data-cell="1-2" data-doc-index="19">4</td></tr><tr><td class="doc-block cell" data-cell="2-0" data-doc-index="19">Dec 2025</td><td class="doc-block cell" data-cell="2-1" data-doc-index="19">53 (Sep–Dec 2025)</td><td class="doc-block cell" data-cell="2-2" data-doc-index="19">53</td></tr><tr><td class="doc-block cell" data-cell="3-0" data-doc-index="19">Mar 2026</td><td class="doc-block cell" data-cell="3-1" data-doc-index="19">393 (Jan–Mar 2026)</td><td class="doc-block cell" data-cell="3-2" data-doc-index="19">446</td></tr><tr><td class="doc-block cell" data-cell="4-0" data-doc-index="19">May 2026</td><td class="doc-block cell" data-cell="4-1" data-doc-index="19">711 (Jan–May 2026)</td><td class="doc-block cell" data-cell="4-2" data-doc-index="19">764</td></tr><tr><td class="doc-block cell" data-cell="5-0" data-doc-index="19">Sep 2026</td><td class="doc-block cell" data-cell="5-1" data-doc-index="19">≈1,100 (Jan–Sep 2026)</td><td class="doc-block cell" data-cell="5-2" data-doc-index="19">≈1,150</td></tr></tbody></table></div></div>
+</div>
+<p class="source-caption doc-block" data-doc-index="21">Sources: DATA HUB/CPS&amp;SA <span class="apa-citation" data-source-ids="5">(<a href="https://t.me/DataHub_FCBK/3772" rel="noopener noreferrer" target="_blank" title="Open original source 5: DATA HUB (First Credit Bureau)">DATA HUB, 2026</a>)</span>, Kursiv <span class="apa-citation" data-source-ids="27">(<a href="https://kz.kursiv.media/2026-04-28/fvfv-droppery-razognali-ekonomicheskuyu-prestupnost-chislo-del-vyroslo-v-2-4-raza/" rel="noopener noreferrer" target="_blank" title="Open original source 27: Veliyev, F.">Veliyev, 2026</a>)</span>, Ranking.kz <span class="apa-citation" data-source-ids="6">(<a href="https://ranking.kz/digest/socium-digest/bolee-tysyachi-prestupleniy-kak-vvedenie-otvetstvennosti-za-dropperstvo-izmenilo-statistiku.html" rel="noopener noreferrer" target="_blank" title="Open original source 6: Ranking.kz">Ranking.kz, 2026</a>)</span>. Cumulative values are author calculations. The September 2026 figure is rounded; it is not an exact count.</p>
+<p class="prose-p doc-block" data-doc-index="22">Registration climbed rapidly after the offence was introduced. Yet the series is not an incidence trend for the underlying practice: creating a new legal category changes what police can classify and report. At 1 January 2026, the Anti-Fraud Centre separately counted 80,871 incidents involving transactions with signs of fraud <span class="apa-citation" data-source-ids="9">(<a href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/18571" rel="noopener noreferrer" target="_blank" title="Open original source 9: National Bank of Kazakhstan">National Bank of Kazakhstan, 2026</a>)</span>. These are incidents, not Article 232-1 offences or convictions.</p>
+<h3 class="subsection-title doc-block" data-doc-index="23">Figure 2. Different generations in completed proceedings</h3>
+<div class="feature chart-feature" id="figure-2">
+<div class="chart-head"><div><p class="eyebrow">INTERACTIVE FIGURE · 02</p><h4>The generational bridge</h4><p class="chart-description">Two different recorded populations, not matched individuals.</p></div>
+<div aria-label="Figure 2 display mode" class="chart-switch" role="group"><button aria-pressed="true" class="switch-btn is-active" data-figure="2" data-view="chart" type="button">Chart</button><button aria-pressed="false" class="switch-btn" data-figure="2" data-view="table" type="button">Table</button></div></div>
+<div aria-label="The generational bridge; use Table toggle to inspect the exact data" class="chart-canvas-wrap" id="figure-2-chart" role="img"><canvas aria-label="The generational bridge" id="chart-generations"></canvas></div>
+<div class="chart-table-panel" hidden="" id="figure-2-table"><div class="table-scroll"><table class="data-table" data-original-index="24"><thead><tr><th class="doc-block cell" data-cell="0-0" data-doc-index="24" scope="col">Measured group</th><th class="doc-block cell" data-cell="0-1" data-doc-index="24" scope="col">Number</th><th class="doc-block cell" data-cell="0-2" data-doc-index="24" scope="col">Share of its own denominator</th></tr></thead><tbody><tr><td class="doc-block cell" data-cell="1-0" data-doc-index="24">Suspects aged 18–29</td><td class="doc-block cell" data-cell="1-1" data-doc-index="24">159 / 214</td><td class="doc-block cell" data-cell="1-2" data-doc-index="24">74.3%</td></tr><tr><td class="doc-block cell" data-cell="2-0" data-doc-index="24">Suspects recorded as unemployed</td><td class="doc-block cell" data-cell="2-1" data-doc-index="24">140 / 214</td><td class="doc-block cell" data-cell="2-2" data-doc-index="24">65.4%</td></tr><tr><td class="doc-block cell" data-cell="3-0" data-doc-index="24">Victims older than 30</td><td class="doc-block cell" data-cell="3-1" data-doc-index="24">350 / 461</td><td class="doc-block cell" data-cell="3-2" data-doc-index="24">75.9%</td></tr><tr><td class="doc-block cell" data-cell="4-0" data-doc-index="24">Victims recorded as pensioners</td><td class="doc-block cell" data-cell="4-1" data-doc-index="24">44 / 461</td><td class="doc-block cell" data-cell="4-2" data-doc-index="24">9.5%</td></tr></tbody></table></div></div>
+</div>
+<p class="source-caption doc-block" data-doc-index="26">Source: DATA HUB using CPS&amp;SA figures, early June 2026 <span class="apa-citation" data-source-ids="5">(<a href="https://t.me/DataHub_FCBK/3772" rel="noopener noreferrer" target="_blank" title="Open original source 5: DATA HUB (First Credit Bureau)">DATA HUB, 2026</a>)</span>. DATA HUB describes the groups as 75% and 76%; the chart calculates 159 ÷ 214 = 74.3% and 350 ÷ 461 = 75.9% from the published counts. The first source percentage is approximate rather than conventional whole-number rounding (74%). Categories overlap within their populations. Suspects and victims are different denominators; this table does not pair individual offenders with victims.</p>
+<p class="prose-p doc-block" data-doc-index="27">The generational bridge is striking: young adults predominate among recorded suspects, while people older than 30 predominate among recognized victims. But the 214 individuals were suspects in completed proceedings, not a representative sample of everyone approached by recruiters. The 461 victims belong to those completed cases, not every financial-fraud victim nationwide.</p>
+<h3 class="subsection-title silences-heading doc-block" data-doc-index="28">Where the data goes silent</h3>
+<p class="silence-item doc-block" data-doc-index="29">1. The legal break. Article 232-1 began in September 2025. A rise in registrations may reflect changed classification, investigations, and reporting. Offences, cases, suspects, and convictions are not interchangeable measures; none gives a population-level recruitment rate.</p>
+<p class="silence-item doc-block" data-doc-index="30">2. Selection into enforcement. Data on completed investigations omit undetected schemes, ongoing investigations, people who refused recruitment, and unprosecuted organizers. Visible account holders may be easier to identify than those who control payments remotely. The recorded age distribution could partly reflect that selection.</p>
+<p class="silence-item doc-block" data-doc-index="31">3. Vulnerability without causation. The 159 young suspects and 140 unemployed suspects are separate totals; their overlap is unpublished. Neither youth nor unemployment proves deception or causation. The national youth unemployment rate was 2.9% for ages 15–34 in Q3 2026 <span class="apa-citation" data-source-ids="7">(<a href="https://stat.gov.kz/ru/news/dsituatsiya-na-rynke-truda/" rel="noopener noreferrer" target="_blank" title="Open original source 7: Bureau of National Statistics of the Republic of Kazakhstan">Bureau of National Statistics of the Republic of Kazakhstan, 2026</a>)</span>, a different population and date, unsuitable for a direct risk comparison.</p>
+<p class="silence-item doc-block" data-doc-index="32">4. Missing intent and safeguards. Aggregate records do not describe recruitment messages, promised pay, threats, understanding, or who controlled the funds. They do not disclose how frequently first-time offenders sought or received Article 232-1’s voluntary-reporting exemption, or how sanctions differed between organizers and intermediaries. Without linked, privacy-protected case information, claims of proportionate enforcement remain difficult to test.</p>
+<p class="prose-p doc-block" data-doc-index="33">The statistics count the people detected and the harm documented. They are far less able to explain how one group becomes involved in moving funds while another loses them. That is why criminal-network, behavioral, and technical research must be read together.</p></div></section>
+<section class="research-section" data-nav-section="" id="research"><div class="article-copy"><h2 class="section-title doc-block" data-doc-index="35">3. Current State of Research — Detection Is Not Explanation</h2>
+<p class="prose-p lead doc-block" data-doc-index="36">Section 2 uncovered a generational bridge: 74.3% of recorded suspects were aged 18–29, while 75.9% of recognized victims were older than 30. The groups are not matched pairs, but the contrast raises a question beyond criminal counts: how do people become intermediaries in schemes that harm others? Three academic traditions answer different parts of it. Criminological research maps network power; behavioral research studies exposure and recruitment; technical research recognizes suspicious financial patterns. Their differing samples determine what each can claim. Comparing methods is therefore substantive, not decorative: it tells us whose experiences become visible to researchers and whose decisions remain outside the evidence.</p>
+<h3 class="subsection-title doc-block" data-doc-index="37">Criminal networks: participation is not equal control</h3>
+<p class="prose-p doc-block" data-doc-index="38"><a class="apa-narrative" href="https://doi.org/10.1007/s12117-024-09556-y" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Bekkers, Leukfeldt, and Kleemans (2024)</a> examined 15 closed police investigations in the Netherlands and distinguished organizers, professional facilitators, recruited facilitators, and money mules. Intermediaries were approached through social media and offline relationships; some received money, while others reportedly faced manipulation or threats. The finding challenges a flat view of every participant as equally informed. It does not establish how often coercion occurs among all recruits because the evidence begins with networks already investigated.</p>
+<p class="prose-p doc-block" data-doc-index="39"><a class="apa-narrative" href="https://doi.org/10.1093/bjc/azaa091" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Roks, Leukfeldt, and Densley (2021)</a> similarly show that offline street networks and online offending intertwine. A Telegram message may be embedded in a prior friendship or local relationship. For Kazakhstan, <a class="apa-narrative" href="https://doi.org/10.32523/2616-6844-2026-156-3-188-200" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Temirbolat, Urkumbay, and Alshurazova (2026)</a> identify gaps in how domestic law addresses phishing, vishing, and social engineering. Their comparative legal analysis gives institutional context, but it does not evaluate the application of Article 232-1 to money-mule recruits. Network studies explain organization better than the unseen pool of people who refuse an approach.</p>
+<h3 class="subsection-title doc-block" data-doc-index="40">Behavioral research: three different observational windows</h3>
+<p class="prose-p doc-block" data-doc-index="41">The Dutch Bekkers research cluster is especially revealing methodologically. Its projects are not a longitudinal study of the same people, nor were they published in a simple linear sequence. Yet they deliberately open three observational windows. The 2024 network study uses closed police files: it observes detected participation. <a class="apa-narrative" href="https://doi.org/10.1007/s11292-022-09537-7" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Bekkers, Moneva, and Leukfeldt (2024)</a> used a field quasi-experiment with simulated recruitment advertisements on Instagram: up to 3% of targeted young users engaged, particularly with luxury-oriented or neutralizing messages. That measures engagement, not willingness to transfer stolen funds. <a class="apa-narrative" href="https://doi.org/10.1177/14773708251323349" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Bekkers, Spithoven, Van Houten, and Leukfeldt (2025)</a> then surveyed about 2,000 Dutch people aged 16–25 about previous recruiter contact. This captures exposure, including people not arrested or known to police, but depends on respondents’ recollection and cannot prove subsequent participation.</p>
+<p class="prose-p doc-block" data-doc-index="42">The comparison with <a class="apa-narrative" href="https://doi.org/10.1080/01639625.2023.2263611" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Hong and Lee (2024)</a> is instructive. Their South Korean study models recruitment channels among 543 apprehended money mules. Unemployed people in their twenties with certain educational profiles were more likely to appear in particular online recruitment channels. That is useful for understanding detected offenders, but selection starts after apprehension. We cannot learn from it how many similarly situated young adults were contacted and refused, or whether unemployment caused involvement. The Dutch survey broadens the denominator; the Instagram study tests attraction; the police and Korean samples describe selected cases. None alone measures a pathway from financial stress to criminal intent.</p>
+<p class="prose-p doc-block" data-doc-index="43">This matters when interpreting Kazakhstan’s 140 unemployed suspects. A high percentage among completed cases might reflect targeted recruitment, financial precarity, detection practices, or all three. To claim exploitation from employment status alone would substitute an appealing narrative for causal evidence. Conversely, dismissing vulnerability because some recruits receive payment would ignore unequal information and control.</p>
+<h3 class="subsection-title doc-block" data-doc-index="44">Technical research: detecting a pattern is not judging a person</h3>
+<p class="prose-p doc-block" data-doc-index="45"><a class="apa-narrative" href="https://doi.org/10.1016/j.cose.2022.102786" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Vorobyev and Krivitskaya (2022)</a> designed rule-induction methods to reduce false positives in bank anti-fraud screening, drawing on a large transaction dataset. <a class="apa-narrative" href="https://doi.org/10.2197/ipsjjip.31.643" rel="noopener noreferrer" target="_blank" title="Open the original academic paper">Asomura, Iijima, and Mori (2023)</a> tested detection of unauthorized transfers in Japanese online banking and emphasized heavy manual-review burdens when legitimate transactions trigger alarms. Their contribution is operational: improved screening may reduce investigative delay and wasted review time. But the ground truth is a transaction label, not a judicial finding about the account holder’s knowledge, bargaining power, or role in a network.</p>
+<p class="prose-p doc-block" data-doc-index="46">The distinction cuts both ways. An accurate alert can identify fraud-associated activity without explaining whether its apparent owner was deceived. An inaccurate alert can burden an innocent account holder, particularly someone dependent on immediate access to funds. Neither technical accuracy nor a youth demographic correlation is a substitute for procedural fairness. The literature also offers few controlled estimates of whether a warning delivered before recruitment reduces later money-mule involvement.</p>
+<aside aria-label="The research gap" class="big-callout gap-card"><span class="big-callout-index">03 / RESEARCH GAP</span><h3 class="doc-block" data-cell="0-0" data-doc-index="47">THE GAP</h3><p class="doc-block" data-cell="1-0" data-doc-index="47">Research explains how illicit networks recruit, which young people encounter offers, and how banks detect suspect transactions. What remains unresolved in Kazakhstan is how these mechanisms meet under Article 232-1: who was deceived, who controlled the scheme, how institutions distinguish responsibility, and whether voluntary prevention can reduce recruitment before criminal liability becomes a possibility. A defensible intervention must test prevention without turning suspicion into punishment.</p><span aria-hidden="true" class="callout-corner">↗</span></aside></div></section>
+<section class="research-section" data-nav-section="" id="solution"><div class="article-copy"><h2 class="section-title doc-block" data-doc-index="50">4. The AI-Assisted Solution — and What It Would Cost</h2>
+<h3 class="subsection-title doc-block" data-doc-index="51">From detection to prevention</h3>
+<p class="prose-p lead doc-block" data-doc-index="52">Section 3’s conclusion is a design constraint: suspicious transfers are not explanations of responsibility. A system that merely finds more young account holders could amplify the enforcement imbalance identified in Section 2. The priority is recognizing recruitment before money moves; bank detection remains a bounded research component. The proposed pilot therefore separates a voluntary bilingual warning service from a bank-side model that can be evaluated without independently changing customers’ rights.</p>
+<h3 class="subsection-title doc-block" data-doc-index="53">The architecture: two layers, different powers</h3>
+<p class="prose-p doc-block" data-doc-index="54">Layer 1 is a free Kazakh/Russian recruitment checker for students and other job-seekers. Users choose to paste a Telegram or Instagram offer or a payment request, ideally after redacting identifying information. A small language model and reviewed guidance identify warning signs—unrealistic earnings, sharing account access, or receiving and forwarding third-party funds—and explain why each matters. It explains Article 232-1, the conditional exemption, and verified next steps <span class="apa-citation" data-source-ids="1,3">(<a href="https://adilet.zan.kz/rus/docs/K1400000226" rel="noopener noreferrer" target="_blank" title="Open original source 1: Republic of Kazakhstan">Republic of Kazakhstan, 2014</a>; <a href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/17792" rel="noopener noreferrer" target="_blank" title="Open original source 3: National Bank of Kazakhstan">National Bank of Kazakhstan, 2025a</a>)</span>. It never declares guilt, promises immunity, or certifies an apparently safe message. No login or automatic police report is required.</p>
+<div aria-label="Interactive fictional recruitment message, educational demonstration" class="feature feature-telegram">
+<div class="feature-top"><div><p class="eyebrow">INTERACTIVE FIELD NOTE · 01</p><h4>Inside a recruitment message</h4></div><span class="feature-status">FICTIONAL EXAMPLE</span></div>
+<p class="feature-help">Select a highlighted phrase to see what a voluntary checker could explain. This is a demonstration of warning indicators—not a live fraud detector.</p>
+<div class="telegram-grid">
+<div class="telegram-shell">
+<div class="telegram-top"><span aria-hidden="true" class="telegram-avatar">PJ</span><div><strong>Part-time Jobs KZ</strong><small>Fictional Telegram-style post · 10:42</small></div><span aria-hidden="true" class="telegram-menu">•••</span></div>
+<div class="telegram-thread">
+<div class="telegram-bubble">
+<span class="telegram-metadata">Today · 10:42</span>
+<p>Looking for a <button aria-pressed="true" class="phrase is-selected" data-inspect="role" type="button">payment assistant</button>.</p>
+<p>Earn <button aria-pressed="false" class="phrase" data-inspect="pay" type="button">30,000 KZT a day</button>. No previous experience needed.</p>
+<p>Your job: <button aria-pressed="false" class="phrase" data-inspect="account" type="button">receive transfers into your personal bank account and forward the money</button> to our company.</p>
+<span class="telegram-time">10:42 ✓✓</span>
+</div>
+</div>
+<div class="telegram-caption">Not a real job advertisement. No messages or personal data are uploaded.</div>
+</div>
+<div aria-atomic="true" aria-live="polite" class="inspector-panel">
+<p class="eyebrow">WHAT A VOLUNTARY CHECKER COULD SAY</p>
+<div aria-hidden="true" class="inspector-icon">i</div>
+<h5 id="inspector-title">A vague role deserves verification</h5>
+<p id="inspector-detail">“Payment assistant” is not enough to establish what the employer does, whether the job is legitimate, or why personal accounts would be involved. Ask for verifiable employer and role information before proceeding.</p>
+<div class="inspector-notice"><strong>Important:</strong> A warning indicator is not an accusation. Being approached does not make you responsible for a criminal scheme.</div>
+<div class="inspector-count">Explore: <span id="inspector-counter">1 of 3</span> highlighted indicators</div>
+</div>
+</div>
+</div>
+<p class="prose-p doc-block" data-doc-index="55">Layer 2 is a separate bank-side model using data already lawfully available to two participating banks. During a 12-month pilot, an alert enters a 24-hour shadow-mode observation and human evaluation window: the model records a risk score for analysis, but cannot independently pause transfers, freeze an account, or send a criminal referral. Existing anti-fraud obligations continue unchanged. Article 25-1 of the Law on Payments and Payment Systems provides existing procedures for temporary suspension of suspicious transactions for up to five working days, and the National Bank reports continued access to protected wages, pensions, stipends, and benefits under relevant restrictions <span class="apa-citation" data-source-ids="22,23">(<a href="https://adilet.zan.kz/rus/docs/Z1600000011" rel="noopener noreferrer" target="_blank" title="Open original source 22: Republic of Kazakhstan">Republic of Kazakhstan, 2016</a>; <a href="https://nationalbank.kz/en/news/informacionnye-soobshcheniya/17858" rel="noopener noreferrer" target="_blank" title="Open original source 23: National Bank of Kazakhstan">National Bank of Kazakhstan, 2025b</a>)</span>. The pilot grants no new suspension power. Banks remain legally responsible for decisions; model developers and evaluators do not replace them.</p>
+<p class="prose-p doc-block" data-doc-index="56">Voluntary checker inquiries must never create bank or police suspicion. University partners can distribute the checker and verified advice, but must not collect students’ individual queries. The pilot tests whether preventative explanations add value and whether shadow scoring could someday improve existing investigations, not whether AI can automatically identify criminals.</p>
+<h3 class="subsection-title doc-block" data-doc-index="57">What two real implementations establish</h3>
+<p class="prose-p doc-block" data-doc-index="58">Singapore’s government-backed ScamShield checks or flags suspicious communications and uses user reports to improve protection <span class="apa-citation" data-source-ids="20">(<a href="https://reports.open.gov.sg/scamshield" rel="noopener noreferrer" target="_blank" title="Open original source 20: Open Government Products">Open Government Products, 2026</a>)</span>. Its Q3 2026 dashboard reported 4.39 million scam alerts, 86% precision, 85.8% recall, and approximately SGD 724,200 in quarterly operating costs. Those are published operational measures, not proof of crimes prevented. A trial of scam-trend notifications was rolled back because reach was low and increased protective behavior could not be established. This is a warning against assuming that exposure to advice changes behavior.</p>
+<p class="prose-p doc-block" data-doc-index="59">UnionBank in the Philippines developed ML detection using account-opening and transaction data <span class="apa-citation" data-source-ids="21">(<a href="https://www.oecd.org/en/publications/the-limits-of-defi-for-financial-inclusion_f00a0c7f-en/full-report/component-5.html" rel="noopener noreferrer" target="_blank" title="Open original source 21: Organisation for Economic Co-operation and Development">Organisation for Economic Co-operation and Development [OECD], 2024</a>)</span>. The OECD reports an initial 42% detection rate for confirmed money mules, 90% accuracy when predicting non-mules, and identification of some mule accounts four days after opening rather than about a month through traditional investigation. These metrics neither establish knowledge nor justify automatic restrictions. Together the cases justify testing a public warning service and earlier identification, but not importing their performance to Kazakhstan or presuming fewer prosecutions.</p>
+<h3 class="subsection-title doc-block" data-doc-index="60">The bill, I — Environmental</h3>
+<div aria-label="Five-part bill overview" class="receipt-block feature">
+<div class="receipt-top"><span>THE BILL</span><span>12-MONTH PILOT / ESTIMATE</span></div>
+<div class="receipt-heading"><div><p class="eyebrow">PREVENTION HAS A PRICE</p><h4>More than a software license.</h4></div><div class="receipt-total"><span>YEAR 1</span><strong>138.7M ₸</strong></div></div>
+<div class="receipt-divider"></div>
+<div class="receipt-lines">
+<div><span>01 / ENVIRONMENT</span><span>Energy, water, hardware</span></div>
+<div><span>02 / ECONOMIC</span><span>Who pays and benefits</span></div>
+<div><span>03 / LABOR</span><span>Reviewers, annotation, upkeep</span></div>
+<div><span>04 / GOVERNANCE</span><span>Power and oversight</span></div>
+<div><span>05 / DATA ETHICS</span><span>Privacy, mistakes, redress</span></div>
+</div>
+<div class="receipt-divider"></div>
+<div class="receipt-total-row"><span>SETUP</span><strong>46.0M ₸</strong><span>OPERATING</span><strong>92.7M ₸</strong></div>
+<p class="receipt-footnote">Budget figures are proposed planning assumptions, not supplier quotes or committed funding.</p>
+</div>
+<p class="prose-p doc-block" data-doc-index="61">Kazakhstan generated about 85% of its electricity from fossil fuels in 2025 <span class="apa-citation" data-source-ids="24">(<a href="https://ember-energy.org/countries-and-regions/kazakhstan/" rel="noopener noreferrer" target="_blank" title="Open original source 24: Ember">Ember, 2026</a>)</span>. Local hosting may help meet governance duties while still drawing on a fossil-heavy grid. For a hypothetical 12-month pilot, assume 30,000 recruitment checks at 0.5 Wh each, two million transaction risk evaluations at 0.02 Wh each, continuously reserved computing capacity of 0.55 kW, and power-usage effectiveness of 1.3. These inputs imply approximately 6.3 MWh per year; using an explicitly illustrative grid factor of 0.8 kg CO2e/kWh implies roughly five tonnes CO2e. At an assumed cooling intensity of 0.5–2 litres/kWh, direct cooling water would be around 3–13 cubic metres. None is measured consumption; data-centre water use, hardware production and model upgrades require separate assessment. Reuse existing infrastructure and publish annual metered energy and water figures rather than training a new large model.</p>
+<h3 class="subsection-title doc-block" data-doc-index="62">The bill, II — Economic: the financing dilemma</h3>
+<p class="prose-p doc-block" data-doc-index="63">A two-bank, three-university-partner pilot is provisionally priced at KZT 138.7 million in Year 1: KZT 46.0 million in setup and KZT 92.7 million in annual operations, including contingency. This is a transparent planning scenario, not procurement evidence. Commercial banks may resist paying for a service that protects citizens across institutions while producing thousands of extra manual alerts. That collective-action problem makes governance part of the bill. The National Bank’s existing Anti-Fraud Centre could coordinate a co-financed consumer-protection pilot, subject to appropriate authorization and agreement; mandatory bank participation would require a specific legal basis. Neither funding model currently exists for this proposal. Banks would gain fewer fraud losses, while young users and potential victims receive much of the benefit. Independent evaluation must compare the intervention against cheaper university campaigns, ordinary bank warnings and rule-based screening.</p>
+<div class="budget-table-wrap"><div class="table-scroll"><table class="data-table" data-original-index="64"><thead><tr><th class="doc-block cell" data-cell="0-0" data-doc-index="64" scope="col">Year-one budget category</th><th class="doc-block cell" data-cell="0-1" data-doc-index="64" scope="col">KZT million</th></tr></thead><tbody><tr><td class="doc-block cell" data-cell="1-0" data-doc-index="64">Interface, accessibility, bilingual content</td><td class="doc-block cell" data-cell="1-1" data-doc-index="64">10.0</td></tr><tr><td class="doc-block cell" data-cell="2-0" data-doc-index="64">Two-bank integration</td><td class="doc-block cell" data-cell="2-1" data-doc-index="64">14.0</td></tr><tr><td class="doc-block cell" data-cell="3-0" data-doc-index="64">Model development and validation</td><td class="doc-block cell" data-cell="3-1" data-doc-index="64">12.0</td></tr><tr><td class="doc-block cell" data-cell="4-0" data-doc-index="64">Initial legal/security review and preparation</td><td class="doc-block cell" data-cell="4-1" data-doc-index="64">10.0</td></tr><tr><td class="doc-block cell" data-cell="5-0" data-doc-index="64">One-time setup subtotal</td><td class="doc-block cell" data-cell="5-1" data-doc-index="64">46.0</td></tr><tr><td class="doc-block cell" data-cell="6-0" data-doc-index="64">Staff and compliance specialists</td><td class="doc-block cell" data-cell="6-1" data-doc-index="64">60.6</td></tr><tr><td class="doc-block cell" data-cell="7-0" data-doc-index="64">Annotation and translation</td><td class="doc-block cell" data-cell="7-1" data-doc-index="64">3.0</td></tr><tr><td class="doc-block cell" data-cell="8-0" data-doc-index="64">Hosting, security, outreach, independent evaluation</td><td class="doc-block cell" data-cell="8-1" data-doc-index="64">17.0</td></tr><tr><td class="doc-block cell" data-cell="9-0" data-doc-index="64">15% operating contingency</td><td class="doc-block cell" data-cell="9-1" data-doc-index="64">12.1</td></tr><tr><td class="doc-block cell" data-cell="10-0" data-doc-index="64">Annual operating subtotal</td><td class="doc-block cell" data-cell="10-1" data-doc-index="64">92.7</td></tr><tr><td class="doc-block cell" data-cell="11-0" data-doc-index="64">YEAR-ONE TOTAL</td><td class="doc-block cell" data-cell="11-1" data-doc-index="64">138.7</td></tr></tbody></table></div></div>
+<p class="source-caption doc-block" data-doc-index="66">Budget assumptions developed for this project; amounts are not supplier quotes. Monetary values are in millions of Kazakhstani tenge.</p>
+<h3 class="subsection-title doc-block" data-doc-index="67">The bill, III — Labor and error</h3>
+<p class="prose-p doc-block" data-doc-index="68">Automation reallocates work instead of erasing it. Paid bilingual annotators must check evolving scam language; legal specialists must update statutory explanations; security engineers maintain the service; and bank compliance staff assess alerts. At two million transactions, even a small flag rate creates substantial review work. Assuming 20 minutes per alert and 1,600 productive reviewer hours annually, a 0.2% alert rate creates 4,000 reviews, approximately 1,333 hours or 0.8 full-time equivalent; a 1% alert rate creates 20,000 reviews, approximately 6,667 hours or 4.2 FTE. The two funded reviewers cannot absorb the higher scenario. Worker strain and wrongful suspicion remain costs.</p>
+<div class="scenario-table-wrap"><div class="table-scroll"><table class="data-table" data-original-index="69"><thead><tr><th class="doc-block cell" data-cell="0-0" data-doc-index="69" scope="col">Alert share</th><th class="doc-block cell" data-cell="0-1" data-doc-index="69" scope="col">Annual alerts</th><th class="doc-block cell" data-cell="0-2" data-doc-index="69" scope="col">Human review hours</th><th class="doc-block cell" data-cell="0-3" data-doc-index="69" scope="col">Reviewer FTE</th></tr></thead><tbody><tr><td class="doc-block cell" data-cell="1-0" data-doc-index="69">0.2%</td><td class="doc-block cell" data-cell="1-1" data-doc-index="69">4,000</td><td class="doc-block cell" data-cell="1-2" data-doc-index="69">1,333</td><td class="doc-block cell" data-cell="1-3" data-doc-index="69">0.8</td></tr><tr><td class="doc-block cell" data-cell="2-0" data-doc-index="69">1.0%</td><td class="doc-block cell" data-cell="2-1" data-doc-index="69">20,000</td><td class="doc-block cell" data-cell="2-2" data-doc-index="69">6,667</td><td class="doc-block cell" data-cell="2-3" data-doc-index="69">4.2</td></tr></tbody></table></div></div>
+<div aria-label="Interactive compliance review workload calculator" class="feature slider-feature">
+<div class="feature-top"><div><p class="eyebrow">INTERACTIVE COST STRESS TEST · 03</p><h4>What if the model flags more?</h4></div><span class="feature-status">HYPOTHETICAL SCENARIO</span></div>
+<p class="feature-help">Move the alert rate. More alerts mean more human review—even while the proposed model operates in shadow mode.</p>
+<div class="slider-layout"><label for="alert-slider">Annual transactions flagged <output for="alert-slider" id="rate-output">0.2%</output></label><input aria-describedby="slider-assumptions" id="alert-slider" max="1.0" min="0.2" step="0.1" type="range" value="0.2"/><div class="range-ends"><span>0.2%</span><span>1.0%</span></div></div>
+<div aria-live="polite" class="slider-metrics"><div><span>ANNUAL ALERTS</span><strong id="alerts-out">4,000</strong></div><div><span>REVIEW HOURS</span><strong id="hours-out">1,333</strong></div><div><span>REVIEWER FTE</span><strong id="fte-out">0.8</strong></div></div>
+<p class="feature-footnote" id="slider-assumptions">2,000,000 transactions per year × selected alert rate; 20 minutes per review; 1,600 productive hours per full-time employee. Illustrative workload only—not measured model performance.</p>
+</div>
+<p class="source-caption doc-block" data-doc-index="71">Scenario only: 2 million evaluations, 20 minutes per alert, 1,600 productive hours per FTE; no claim about model precision.</p>
+<h3 class="subsection-title doc-block" data-doc-index="72">The bill, IV — Political power and governance</h3>
+<p class="prose-p doc-block" data-doc-index="73">Kazakhstan’s AI Law No. 230-VIII, in force from January 2026, makes rights and accountability central rather than optional. Articles 7–9 address explanation, operator responsibility and human autonomy; Articles 17–18 concern risk classification and management; Articles 20–21 address audits and disclosure obligations <span class="apa-citation" data-source-ids="25">(<a href="https://adilet.zan.kz/rus/docs/Z2500000230" rel="noopener noreferrer" target="_blank" title="Open original source 25: Republic of Kazakhstan">Republic of Kazakhstan, 2025</a>)</span>. The public checker and bank model require distinct risk assessments. Bank scoring warrants especially close scrutiny because future deployment could affect access to essential financial services. Classification must be determined under applicable rules, not asserted by the project. Age or unemployment must never independently establish suspicion. The central political risk is function creep: bank signals could later support generalized youth profiling, law-enforcement access or unrelated commercial decisions. Model owners, banks, the regulator, and independent evaluators therefore need clearly separated powers, audit trails, and limits on secondary use.</p>
+<h3 class="subsection-title doc-block" data-doc-index="74">The bill, V — Data ethics</h3>
+<p class="prose-p doc-block" data-doc-index="75">Pasted chat screenshots may expose names, phone numbers, account details, and private third parties. Article 12 of Kazakhstan’s Personal Data Law requires personal-data storage in databases or digital objects located in Kazakhstan, alongside other processing safeguards <span class="apa-citation" data-source-ids="26">(<a href="https://adilet.zan.kz/rus/docs/Z1300000094" rel="noopener noreferrer" target="_blank" title="Open original source 26: Republic of Kazakhstan">Republic of Kazakhstan, 2013</a>)</span>. The checker should default to anonymous use, redact or discourage identifying details, minimize retention, and never silently train on submissions. Consent to processing is not consent to police referral; a low-risk model response is not a guarantee. Banks keep transaction records within lawful systems, separate from voluntary inquiries. False positives may produce suspicion and administrative burdens even in shadow mode, while false negatives may create dangerous reassurance. Audit error rates in both languages; give affected individuals accessible human remedies whenever a consequential decision is made.</p>
+<h3 class="subsection-title verdict-heading doc-block" data-doc-index="76" id="verdict">Verdict: a conditional yes, or no to expansion</h3>
+<p class="prose-p doc-block" data-doc-index="77">Kazakhstan should test the voluntary checker and tightly restricted shadow model only if five conditions hold: (1) no AI-triggered punishment, freezes, or criminal referrals; (2) legally accountable human review and accessible redress; (3) strict separation of voluntary queries from banking and policing data; (4) evidence that warnings and detection add benefit beyond simpler alternatives, including disaggregated published false-positive results; and (5) audited labor, budget, energy, and water costs with an enforceable shutdown rule. If consent, oversight, or meaningful evaluation cannot be guaranteed, reject the bank expansion. Fund ordinary financial education, verified public warnings, trained human assistance and better investigations of recruiters instead. The goal is fewer people recruited into financial crime, not merely more people identified by an algorithm.</p></div></section>
+</div></div>
+<section class="transparency-section page" data-nav-section="" id="transparency"><h2 class="section-title">AI Transparency Statement</h2><div class="transparency-box"><p class="prose-p">I used ChatGPT as a research and drafting assistant, not an independent authority. It helped me discover sources, compare academic approaches, check legal and statistical claims against primary materials, edit prose, calculate scenario budgets, and prepare website content. I personally reviewed the eight academic abstracts and checked official sources. I remain responsible for the research and its verification.</p><p class="prose-p">I accepted the generational contrast between young suspects and older victims, the three-approach synthesis of criminology, behavior and technical detection, a two-layer preventive proposal, and a conditional policy verdict. I questioned and revised these choices.</p><p class="prose-p">Several suggestions were rejected or revised. I removed synthetic job advertisements and a proposed classifier experiment from Section 2, keeping it grounded in official statistics. I replaced secondary explanations of Article 232-1 with the official Criminal Code. Most importantly, after reviewing Article 25-1 of the payments law, I rejected an automatic 24-hour account freeze. The bank model is now shadow-only, with a 24-hour human evaluation window and no autonomous restrictions. The verdict also allows non-AI prevention. AI also assisted in developing the website’s HTML, CSS, JavaScript, interactive charts, and responsive layout; I reviewed the design choices and remain responsible for the final content and presentation.</p></div></section>
+<section class="sources-section page" data-nav-section="" id="sources"><h2 class="section-title">Numbered sources</h2><p class="prose-p" style="max-width:770px">References use APA 7 author–date formatting and link directly to the original documents. The 01–27 identifiers are retained as a source registry for traceability; in-text citations open the original sources in a new tab.</p><ol class="sources-list"><li class="source-entry" data-apa-author="Republic of Kazakhstan" id="source-1"><span class="source-number">[01]</span><div class="source-copy">Republic of Kazakhstan. (2014). <a class="reference-title" href="https://adilet.zan.kz/rus/docs/K1400000226" rel="noopener noreferrer" target="_blank"><em>Уголовный кодекс Республики Казахстан [Criminal Code of the Republic of Kazakhstan] (Art. 232-1)</em></a>. <span>Әділет</span>. <a class="reference-url" href="https://adilet.zan.kz/rus/docs/K1400000226" rel="noopener noreferrer" target="_blank">https://adilet.zan.kz/rus/docs/K1400000226</a></div></li>
+<li class="source-entry" data-apa-author="Ministry of Internal Affairs of the Republic of Kazakhstan" id="source-2"><span class="source-number">[02]</span><div class="source-copy">Ministry of Internal Affairs of the Republic of Kazakhstan. (2025, September 16). <a class="reference-title" href="https://www.gov.kz/org/qriim/press/news/details/1068462?lang=ru" rel="noopener noreferrer" target="_blank"><em>В Казахстане введена уголовная ответственность за дропперство: вступила в силу статья 232-1 УК [Kazakhstan introduces criminal liability for money muling]</em></a>. <a class="reference-url" href="https://www.gov.kz/org/qriim/press/news/details/1068462?lang=ru" rel="noopener noreferrer" target="_blank">https://www.gov.kz/org/qriim/press/news/details/1068462?lang=ru</a></div></li>
+<li class="source-entry" data-apa-author="National Bank of Kazakhstan" id="source-3"><span class="source-number">[03]</span><div class="source-copy">National Bank of Kazakhstan. (2025a, July 30). <a class="reference-title" href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/17792" rel="noopener noreferrer" target="_blank"><em>Национальный Банк предупреждает: злоумышленники вовлекают подростков и пенсионеров в схемы «дропперства» [National Bank warns about recruitment into money-mule schemes]</em></a>. <a class="reference-url" href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/17792" rel="noopener noreferrer" target="_blank">https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/17792</a></div></li>
+<li class="source-entry" data-apa-author="Prosecutor General’s Office of the Republic of Kazakhstan" id="source-4"><span class="source-number">[04]</span><div class="source-copy">Prosecutor General’s Office of the Republic of Kazakhstan. (2026, June 29). <a class="reference-title" href="https://www.gov.kz/org/prokuror/press/news/details/1249581?lang=ru" rel="noopener noreferrer" target="_blank"><em>Риски дропперства [Risks of money muling]</em></a>. <a class="reference-url" href="https://www.gov.kz/org/prokuror/press/news/details/1249581?lang=ru" rel="noopener noreferrer" target="_blank">https://www.gov.kz/org/prokuror/press/news/details/1249581?lang=ru</a></div></li>
+<li class="source-entry" data-apa-author="DATA HUB (First Credit Bureau)" id="source-5"><span class="source-number">[05]</span><div class="source-copy">DATA HUB (First Credit Bureau). (2026, June). <a class="reference-title" href="https://t.me/DataHub_FCBK/3772" rel="noopener noreferrer" target="_blank"><em>Счет зафиксированных случаев дропперства идет на сотни в Казахстане [Money-mule offences number in the hundreds in Kazakhstan] [Telegram post]</em></a>. <span>Telegram</span>. <a class="reference-url" href="https://t.me/DataHub_FCBK/3772" rel="noopener noreferrer" target="_blank">https://t.me/DataHub_FCBK/3772</a></div></li>
+<li class="source-entry" data-apa-author="Ranking.kz" id="source-6"><span class="source-number">[06]</span><div class="source-copy">Ranking.kz. (2026, October 22). <a class="reference-title" href="https://ranking.kz/digest/socium-digest/bolee-tysyachi-prestupleniy-kak-vvedenie-otvetstvennosti-za-dropperstvo-izmenilo-statistiku.html" rel="noopener noreferrer" target="_blank"><em>Более тысячи преступлений: Как введение ответственности за дропперство изменило статистику [Over a thousand offences: How the new money-mule provision changed statistics]</em></a>. <a class="reference-url" href="https://ranking.kz/digest/socium-digest/bolee-tysyachi-prestupleniy-kak-vvedenie-otvetstvennosti-za-dropperstvo-izmenilo-statistiku.html" rel="noopener noreferrer" target="_blank">https://ranking.kz/digest/socium-digest/bolee-tysyachi-prestupleniy-kak-vvedenie-otvetstvennosti-za-dropperstvo-izmenilo-statistiku.html</a></div></li>
+<li class="source-entry" data-apa-author="Bureau of National Statistics of the Republic of Kazakhstan" id="source-7"><span class="source-number">[07]</span><div class="source-copy">Bureau of National Statistics of the Republic of Kazakhstan. (2026, November 12). <a class="reference-title" href="https://stat.gov.kz/ru/news/dsituatsiya-na-rynke-truda/" rel="noopener noreferrer" target="_blank"><em>Ситуация на рынке труда (III квартал 2026 года) [Labour-market situation, third quarter 2026]</em></a>. <a class="reference-url" href="https://stat.gov.kz/ru/news/dsituatsiya-na-rynke-truda/" rel="noopener noreferrer" target="_blank">https://stat.gov.kz/ru/news/dsituatsiya-na-rynke-truda/</a></div></li>
+<li class="source-entry" data-apa-author="Committee on Legal Statistics and Special Accounts" id="source-8"><span class="source-number">[08]</span><div class="source-copy">Committee on Legal Statistics and Special Accounts. (n.d.). <a class="reference-title" href="https://qamqor.gov.kz/crimestat/statistics" rel="noopener noreferrer" target="_blank"><em>Статистика уголовных правонарушений [Criminal statistics portal]</em></a>. <span>Qamqor</span>. <a class="reference-url" href="https://qamqor.gov.kz/crimestat/statistics" rel="noopener noreferrer" target="_blank">https://qamqor.gov.kz/crimestat/statistics</a></div></li>
+<li class="source-entry" data-apa-author="National Bank of Kazakhstan" id="source-9"><span class="source-number">[09]</span><div class="source-copy">National Bank of Kazakhstan. (2026, February 4). <a class="reference-title" href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/18571" rel="noopener noreferrer" target="_blank"><em>Результаты работы Антифрод-центра на 1 января 2026 года [Anti-Fraud Centre results as of January 1, 2026]</em></a>. <a class="reference-url" href="https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/18571" rel="noopener noreferrer" target="_blank">https://nationalbank.kz/ru/news/informacionnye-soobshcheniya/18571</a></div></li>
+<li class="source-entry" data-apa-author="INTERPOL" id="source-10"><span class="source-number">[10]</span><div class="source-copy">INTERPOL. (n.d.). <a class="reference-title" href="https://www.interpol.int/en/Crimes/Financial-crime/Money-mules-what-are-the-risks" rel="noopener noreferrer" target="_blank"><em>Money mules: What are the risks?</em></a> <a class="reference-url" href="https://www.interpol.int/en/Crimes/Financial-crime/Money-mules-what-are-the-risks" rel="noopener noreferrer" target="_blank">https://www.interpol.int/en/Crimes/Financial-crime/Money-mules-what-are-the-risks</a></div></li>
+<li class="source-entry" data-apa-author="Europol" id="source-11"><span class="source-number">[11]</span><div class="source-copy">Europol. (n.d.). <a class="reference-title" href="https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/money-muling" rel="noopener noreferrer" target="_blank"><em>Money muling: Recruitment methods and warning signs</em></a>. <a class="reference-url" href="https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/money-muling" rel="noopener noreferrer" target="_blank">https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/money-muling</a></div></li>
+<li class="source-entry" data-apa-author="Bekkers, L., Leukfeldt, R., &amp; Kleemans, E." id="source-12"><span class="source-number">[12]</span><div class="source-copy">Bekkers, L., Leukfeldt, R., &amp; Kleemans, E. (2024). <a class="reference-title" href="https://doi.org/10.1007/s12117-024-09556-y" rel="noopener noreferrer" target="_blank">Recruiting co-offenders for financial cybercrime: An analysis of police investigations into cybercriminal networks</a>. <em>Trends in Organized Crime</em>. <a class="reference-url" href="https://doi.org/10.1007/s12117-024-09556-y" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s12117-024-09556-y</a></div></li>
+<li class="source-entry" data-apa-author="Roks, R. A., Leukfeldt, E. R., &amp; Densley, J. A." id="source-13"><span class="source-number">[13]</span><div class="source-copy">Roks, R. A., Leukfeldt, E. R., &amp; Densley, J. A. (2021). <a class="reference-title" href="https://doi.org/10.1093/bjc/azaa091" rel="noopener noreferrer" target="_blank">The hybridization of street offending in the Netherlands</a>. <em>The British Journal of Criminology, 61</em>(4), 926–945. <a class="reference-url" href="https://doi.org/10.1093/bjc/azaa091" rel="noopener noreferrer" target="_blank">https://doi.org/10.1093/bjc/azaa091</a></div></li>
+<li class="source-entry" data-apa-author="Temirbolat, N. S., Urkumbay, S. Sh., &amp; Alshurazova, R. A." id="source-14"><span class="source-number">[14]</span><div class="source-copy">Temirbolat, N. S., Urkumbay, S. Sh., &amp; Alshurazova, R. A. (2026). <a class="reference-title" href="https://doi.org/10.32523/2616-6844-2026-156-3-188-200" rel="noopener noreferrer" target="_blank">Navigating the legal gaps: Phishing, vishing, and the emerging landscape of online fraud in Kazakhstan</a>. <em>Bulletin of L. N. Gumilyov Eurasian National University, Law Series, 156</em>(3), 188–200. <a class="reference-url" href="https://doi.org/10.32523/2616-6844-2026-156-3-188-200" rel="noopener noreferrer" target="_blank">https://doi.org/10.32523/2616-6844-2026-156-3-188-200</a></div></li>
+<li class="source-entry" data-apa-author="Bekkers, L. M. J., Moneva, A., &amp; Leukfeldt, E. R." id="source-15"><span class="source-number">[15]</span><div class="source-copy">Bekkers, L. M. J., Moneva, A., &amp; Leukfeldt, E. R. (2024). <a class="reference-title" href="https://doi.org/10.1007/s11292-022-09537-7" rel="noopener noreferrer" target="_blank">Understanding cybercrime involvement: A quasi-experiment on engagement with money mule recruitment ads on Instagram</a>. <em>Journal of Experimental Criminology, 20</em>(2), 375–394. <a class="reference-url" href="https://doi.org/10.1007/s11292-022-09537-7" rel="noopener noreferrer" target="_blank">https://doi.org/10.1007/s11292-022-09537-7</a></div></li>
+<li class="source-entry" data-apa-author="Bekkers, L., Spithoven, R., Van Houten, Y., &amp; Leukfeldt, E. R." id="source-16"><span class="source-number">[16]</span><div class="source-copy">Bekkers, L., Spithoven, R., Van Houten, Y., &amp; Leukfeldt, E. R. (2025). <a class="reference-title" href="https://doi.org/10.1177/14773708251323349" rel="noopener noreferrer" target="_blank">The involvement mechanisms of cybercrime: Explaining previous exposure of young people to money mule recruiters</a>. <em>European Journal of Criminology, 22</em>(4), 487–507. <a class="reference-url" href="https://doi.org/10.1177/14773708251323349" rel="noopener noreferrer" target="_blank">https://doi.org/10.1177/14773708251323349</a></div></li>
+<li class="source-entry" data-apa-author="Hong, S., &amp; Lee, C." id="source-17"><span class="source-number">[17]</span><div class="source-copy">Hong, S., &amp; Lee, C. (2024). <a class="reference-title" href="https://doi.org/10.1080/01639625.2023.2263611" rel="noopener noreferrer" target="_blank">Exploring the influence of sociodemographic backgrounds on money mule recruitment types in South Korea: An analysis of probabilities from machine learning classifiers</a>. <em>Deviant Behavior, 45</em>(5), 752–769. <a class="reference-url" href="https://doi.org/10.1080/01639625.2023.2263611" rel="noopener noreferrer" target="_blank">https://doi.org/10.1080/01639625.2023.2263611</a></div></li>
+<li class="source-entry" data-apa-author="Vorobyev, I., &amp; Krivitskaya, A." id="source-18"><span class="source-number">[18]</span><div class="source-copy">Vorobyev, I., &amp; Krivitskaya, A. (2022). <a class="reference-title" href="https://doi.org/10.1016/j.cose.2022.102786" rel="noopener noreferrer" target="_blank">Reducing false positives in bank anti-fraud systems based on rule induction in distributed tree-based models</a>. <em>Computers &amp; Security, 120</em>, Article 102786. <a class="reference-url" href="https://doi.org/10.1016/j.cose.2022.102786" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.cose.2022.102786</a></div></li>
+<li class="source-entry" data-apa-author="Asomura, I., Iijima, R., &amp; Mori, T." id="source-19"><span class="source-number">[19]</span><div class="source-copy">Asomura, I., Iijima, R., &amp; Mori, T. (2023). <a class="reference-title" href="https://doi.org/10.2197/ipsjjip.31.643" rel="noopener noreferrer" target="_blank">Automating the detection of fraudulent activities in online banking service</a>. <em>Journal of Information Processing, 31</em>, 643–653. <a class="reference-url" href="https://doi.org/10.2197/ipsjjip.31.643" rel="noopener noreferrer" target="_blank">https://doi.org/10.2197/ipsjjip.31.643</a></div></li>
+<li class="source-entry" data-apa-author="Open Government Products" id="source-20"><span class="source-number">[20]</span><div class="source-copy">Open Government Products. (2026). <a class="reference-title" href="https://reports.open.gov.sg/scamshield" rel="noopener noreferrer" target="_blank"><em>ScamShield: Q3 2026 quarterly product report</em></a>. <span>Government of Singapore</span>. <a class="reference-url" href="https://reports.open.gov.sg/scamshield" rel="noopener noreferrer" target="_blank">https://reports.open.gov.sg/scamshield</a></div></li>
+<li class="source-entry" data-apa-author="Organisation for Economic Co-operation and Development" id="source-21"><span class="source-number">[21]</span><div class="source-copy">Organisation for Economic Co-operation and Development. (2024). <a class="reference-title" href="https://www.oecd.org/en/publications/the-limits-of-defi-for-financial-inclusion_f00a0c7f-en/full-report/component-5.html" rel="noopener noreferrer" target="_blank"><em>The limits of DeFi for financial inclusion: Lessons from ASEAN</em></a>. <span>OECD Publishing</span>. <a class="reference-url" href="https://www.oecd.org/en/publications/the-limits-of-defi-for-financial-inclusion_f00a0c7f-en/full-report/component-5.html" rel="noopener noreferrer" target="_blank">https://www.oecd.org/en/publications/the-limits-of-defi-for-financial-inclusion_f00a0c7f-en/full-report/component-5.html</a></div></li>
+<li class="source-entry" data-apa-author="Republic of Kazakhstan" id="source-22"><span class="source-number">[22]</span><div class="source-copy">Republic of Kazakhstan. (2016). <a class="reference-title" href="https://adilet.zan.kz/rus/docs/Z1600000011" rel="noopener noreferrer" target="_blank"><em>О платежах и платежных системах [Law on payments and payment systems] (Art. 25-1)</em></a>. <span>Әділет</span>. <a class="reference-url" href="https://adilet.zan.kz/rus/docs/Z1600000011" rel="noopener noreferrer" target="_blank">https://adilet.zan.kz/rus/docs/Z1600000011</a></div></li>
+<li class="source-entry" data-apa-author="National Bank of Kazakhstan" id="source-23"><span class="source-number">[23]</span><div class="source-copy">National Bank of Kazakhstan. (2025b, August 28). <a class="reference-title" href="https://nationalbank.kz/en/news/informacionnye-soobshcheniya/17858" rel="noopener noreferrer" target="_blank"><em>Anti-Fraud Center expands its functionality to suppress fraud in the financial sector</em></a>. <a class="reference-url" href="https://nationalbank.kz/en/news/informacionnye-soobshcheniya/17858" rel="noopener noreferrer" target="_blank">https://nationalbank.kz/en/news/informacionnye-soobshcheniya/17858</a></div></li>
+<li class="source-entry" data-apa-author="Ember" id="source-24"><span class="source-number">[24]</span><div class="source-copy">Ember. (2026). <a class="reference-title" href="https://ember-energy.org/countries-and-regions/kazakhstan/" rel="noopener noreferrer" target="_blank"><em>Kazakhstan: Electricity generation profile</em></a>. <a class="reference-url" href="https://ember-energy.org/countries-and-regions/kazakhstan/" rel="noopener noreferrer" target="_blank">https://ember-energy.org/countries-and-regions/kazakhstan/</a></div></li>
+<li class="source-entry" data-apa-author="Republic of Kazakhstan" id="source-25"><span class="source-number">[25]</span><div class="source-copy">Republic of Kazakhstan. (2025). <a class="reference-title" href="https://adilet.zan.kz/rus/docs/Z2500000230" rel="noopener noreferrer" target="_blank"><em>Об искусственном интеллекте [Law on artificial intelligence] (Law No. 230-VIII)</em></a>. <span>Әділет</span>. <a class="reference-url" href="https://adilet.zan.kz/rus/docs/Z2500000230" rel="noopener noreferrer" target="_blank">https://adilet.zan.kz/rus/docs/Z2500000230</a></div></li>
+<li class="source-entry" data-apa-author="Republic of Kazakhstan" id="source-26"><span class="source-number">[26]</span><div class="source-copy">Republic of Kazakhstan. (2013). <a class="reference-title" href="https://adilet.zan.kz/rus/docs/Z1300000094" rel="noopener noreferrer" target="_blank"><em>О персональных данных и их защите [Law on personal data and their protection] (Art. 12)</em></a>. <span>Әділет</span>. <a class="reference-url" href="https://adilet.zan.kz/rus/docs/Z1300000094" rel="noopener noreferrer" target="_blank">https://adilet.zan.kz/rus/docs/Z1300000094</a></div></li>
+<li class="source-entry" data-apa-author="Veliyev, F." id="source-27"><span class="source-number">[27]</span><div class="source-copy">Veliyev, F. (2026, April 28). <a class="reference-title" href="https://kz.kursiv.media/2026-04-28/fvfv-droppery-razognali-ekonomicheskuyu-prestupnost-chislo-del-vyroslo-v-2-4-raza/" rel="noopener noreferrer" target="_blank"><em>Новая схема обналички запустила лавину уголовных дел в Казахстане [New cash-out scheme triggers a surge of criminal cases in Kazakhstan]</em></a>. <span>Kursiv</span>. <a class="reference-url" href="https://kz.kursiv.media/2026-04-28/fvfv-droppery-razognali-ekonomicheskuyu-prestupnost-chislo-del-vyroslo-v-2-4-raza/" rel="noopener noreferrer" target="_blank">https://kz.kursiv.media/2026-04-28/fvfv-droppery-razognali-ekonomicheskuyu-prestupnost-chislo-del-vyroslo-v-2-4-raza/</a></div></li></ol></section>
+</main>
+<footer><div class="page footer-inner"><div>THE HIDDEN RECRUITS · PLS 419</div><div><a href="#top">Back to top ↑</a></div></div></footer>
+<script>
+(function() {
+  'use strict';
+  // Voluntary inspector: fictional message and fixed, reviewed educational explanations only.
+  const guidance = {
+    role: {title:'A vague role deserves verification',detail:'“Payment assistant” is not enough to establish what the employer does, whether the job is legitimate, or why personal accounts would be involved. Ask for verifiable employer and role information before proceeding.'},
+    pay: {title:'Unusually high pay can create pressure',detail:'30,000 KZT for simple daily transfers may be designed to encourage a quick decision. High pay by itself does not prove fraud; examine what you would be asked to do and whether the employer can be independently verified.'},
+    account: {title:'Your personal account is not company infrastructure',detail:'Receiving third-party funds into a personal account and forwarding them is a serious money-mule recruitment warning sign. Do not share account access or move strangers’ funds before independent verification and, where needed, qualified advice.'}
+  };
+  const buttons = Array.from(document.querySelectorAll('[data-inspect]'));
+  const countText = document.getElementById('inspector-counter');
+  buttons.forEach((btn,idx)=> btn.addEventListener('click',()=> {
+    buttons.forEach(b=> {const selected=b===btn;b.classList.toggle('is-selected',selected);b.setAttribute('aria-pressed',String(selected));});
+    const d=guidance[btn.dataset.inspect];
+    document.getElementById('inspector-title').textContent=d.title;
+    document.getElementById('inspector-detail').textContent=d.detail;
+    countText.textContent=(idx+1)+' of '+buttons.length;
+  }));
+  // Chart.js visualizations are views onto the exact data tables in the research draft.
+  const chartSpecs = [
+    {id:'timeline',canvas:'chart-timeline',labels:['Sep 2025','Dec 2025','Mar 2026','May 2026','Sep 2026*'],values:[4,53,446,764,1150],colors:'#285CC8'},
+    {id:'generations',canvas:'chart-generations',labels:['Suspects · 18–29','Victims · over 30'],values:[74.3,75.9],colors:['#285CC8','#E66863']}
+  ];
+  const charts = {};
+  function makeCharts() {
+    if(typeof Chart==='undefined') {
+      document.querySelectorAll('[data-view="chart"]').forEach(b=>{b.disabled=true;b.title='Chart.js is unavailable. The data table remains available.';});
+      [1,2].forEach(n=>setFigureMode(n,'table'));
+      return;
+    }
+    Chart.defaults.font.family = "'Inter', Arial, sans-serif";
+    Chart.defaults.color = '#526780';
+    Chart.defaults.plugins.legend.display = false;
+    const common={responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'nearest',intersect:false},plugins:{tooltip:{backgroundColor:'#182C4B',titleColor:'#fff',bodyColor:'#fff',padding:12,displayColors:false}}};
+    charts.timeline = new Chart(document.getElementById('chart-timeline'), {type:'line',data:{labels:chartSpecs[0].labels,datasets:[{label:'Cumulative registered offences',data:chartSpecs[0].values,borderColor:'#285CC8',backgroundColor:'rgba(40,92,200,.09)',fill:true,tension:0,borderWidth:3,pointRadius:5,pointBackgroundColor:'#EC746B',pointHoverRadius:7}]},options:{...common,scales:{y:{beginAtZero:true,grid:{color:'rgba(24,44,75,.09)'},title:{display:true,text:'Registered offences'}},x:{grid:{display:false}}},plugins:{...common.plugins,tooltip:{...common.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.y.toLocaleString()+(ctx.dataIndex===4?' (approximate)':'')}}}}});
+    charts.generations = new Chart(document.getElementById('chart-generations'),{type:'bar',data:{labels:chartSpecs[1].labels,datasets:[{label:'Share within own population',data:chartSpecs[1].values,backgroundColor:chartSpecs[1].colors,borderRadius:4,maxBarThickness:76}]},options:{...common,indexAxis:'y',scales:{x:{beginAtZero:true,max:100,grid:{color:'rgba(24,44,75,.09)'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}},plugins:{...common.plugins,tooltip:{...common.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toFixed(1)+'% of its own population'}}}}});
+  }
+  function setFigureMode(n,mode) {
+    const chart=document.getElementById('figure-'+n+'-chart');
+    const table=document.getElementById('figure-'+n+'-table');
+    if(!chart||!table)return;
+    chart.hidden=mode!=='chart';table.hidden=mode!=='table';
+    document.querySelectorAll('[data-figure="'+n+'"]').forEach(b=>{const active=b.dataset.view===mode;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));});
+    if(mode==='chart' && charts[n===1?'timeline':'generations'])charts[n===1?'timeline':'generations'].resize();
+  }
+  document.querySelectorAll('[data-figure]').forEach(b=>b.addEventListener('click',()=>setFigureMode(Number(b.dataset.figure),b.dataset.view)));
+  makeCharts();
+  const slider=document.getElementById('alert-slider');
+  const f=new Intl.NumberFormat('en-US',{maximumFractionDigits:0});
+  function updateSlider() {
+    const rate=Number(slider.value), alerts=Math.round(2000000*rate/100), hours=alerts*20/60,fte=hours/1600;
+    document.getElementById('rate-output').value=rate.toFixed(1)+'%';
+    document.getElementById('rate-output').textContent=rate.toFixed(1)+'%';
+    document.getElementById('alerts-out').textContent=f.format(alerts);
+    document.getElementById('hours-out').textContent=f.format(Math.round(hours));
+    document.getElementById('fte-out').textContent=fte.toFixed(1);
+    const pct=(rate-0.2)/0.8*100;
+    slider.style.background='linear-gradient(90deg,#244B4A '+pct+'%,#DCE3DD '+pct+'%)';
+  }
+  slider.addEventListener('input',updateSlider);updateSlider();
+  // Navigation tracks visible sections, and the reading progress bar is derived from scroll position.
+  const navTargets=['problem','data','research','solution','verdict','transparency','sources'];
+  const navLinks=Array.from(document.querySelectorAll('.nav-link'));
+  function updateNavigation() {
+    const doc=document.documentElement;
+    const max=Math.max(1,doc.scrollHeight-window.innerHeight);
+    document.getElementById('progress').style.width=Math.min(100,window.scrollY/max*100)+'%';
+    let active='problem';
+    for(const id of navTargets){const el=document.getElementById(id);if(el && el.getBoundingClientRect().top<=155)active=id;}
+    navLinks.forEach(a=>{const isActive=a.getAttribute('href')==='#'+active;a.classList.toggle('active',isActive);if(isActive)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+  }
+  let scheduled=false;
+  window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(()=>{updateNavigation();scheduled=false;});}},{passive:true});
+  window.addEventListener('resize',updateNavigation);updateNavigation();
+})();
+</script>
+</body>
+</html>
